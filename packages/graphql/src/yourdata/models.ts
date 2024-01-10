@@ -23,6 +23,8 @@ registerEnumType(types.VatExemptionCategoryEnumType, { name: "VatExemptionCatego
 
 registerEnumType(types.InvoiceDetailEnumType, { name: "InvoiceDetailEnumType" })
 
+registerEnumType(types.InvoiceEnumType, { name: "InvoiceEnumType" })
+
 @ObjectType()
 export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field()
@@ -384,6 +386,10 @@ export class RequestedDoc implements types.RequestedDoc {
 export class RequestedBookInfo implements types.RequestedBookInfo {
     @Field(type => String, { nullable: true })
     continuationToken?: unknown;
+
+    @Field()
+    counterVatNumber?: string;
+
     @Field()
     count: number;
     @Field({ nullable: true })
@@ -392,8 +398,10 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
     feesAmount?: number;
     @Field({ nullable: true })
     grossValue?: number;
-    @Field()
-    invType: string;
+
+    @Field(type => types.InvoiceEnumType)
+    invType: types.InvoiceEnumType;
+
     @Field(type => types.InvoiceDetailEnumType, { nullable: true })
     invoiceDetailType?: types.InvoiceDetailEnumType;
     @Field()

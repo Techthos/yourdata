@@ -3,247 +3,199 @@ export enum InvoiceEnumType {
     /**
      * Τιμολόγιο Πώλησης
      */
-    InvoiceSales = "1.1",
-
+    InvoiceSales_1_1 = "1.1",
     /**
      * Τιμολόγιο Πώλησης / Ενδοκοινοτικές Παραδόσεις
      */
-    InvoiceSalesIntraCommunityDeliveries = "1.2",
-
+    InvoiceSalesIntraCommunityDeliveries_1_2 = "1.2",
     /**
      * Τιμολόγιο Πώλησης / Παραδόσεις Τρίτων Χωρών
      */
-    InvoiceSalesThirdCountryDeliveries = "1.3",
-
+    InvoiceSalesThirdCountryDeliveries_1_3 = "1.3",
     /**
      * Τιμολόγιο Πώλησης / Πώληση για Λογαριασμό Τρίτων
      */
-    InvoiceSalesThirdPartyAccount = "1.4",
-
+    InvoiceSalesThirdPartyAccount_1_4 = "1.4",
     /**
      * Τιμολόγιο Πώλησης / Εκκαθάριση Πωλήσεων Τρίτων - Αμοιβή από Πωλήσεις Τρίτων
      */
-    InvoiceSalesThirdPartySettlement = "1.5",
-
+    InvoiceSalesThirdPartySettlement_1_5 = "1.5",
     /**
      * Τιμολόγιο Πώλησης / Συμπληρωματικό Παραστατικό
      */
-    InvoiceSalesSupplementaryDocument = "1.6",
-
+    InvoiceSalesSupplementaryDocument_1_6 = "1.6",
     /**
      * Τιμολόγιο Παροχής
      */
-    InvoiceSupply = "2.1",
-
+    InvoiceSupply_2_1 = "2.1",
     /**
      * Τιμολόγιο Παροχής / Ενδοκοινοτική Παροχή Υπηρεσιών
      */
-    InvoiceSupplyIntraCommunityServices = "2.2",
-
+    InvoiceSupplyIntraCommunityServices_2_2 = "2.2",
     /**
      * Τιμολόγιο Παροχής / Παροχή Υπηρεσιών σε λήπτη Τρίτης Χώρας
      */
-    InvoiceSupplyThirdCountryServices = "2.3",
-
+    InvoiceSupplyThirdCountryServices_2_3 = "2.3",
     /**
      * Τιμολόγιο Παροχής / Συμπληρωματικό Παραστατικό
      */
-    InvoiceSupplySupplementaryDocument = "2.4",
-
+    InvoiceSupplySupplementaryDocument_2_4 = "2.4",
     /**
      * Τίτλος Κτήσης (μη υπόχρεος Εκδότης)
      */
-    PropertyTitleNonObligatedIssuer = "3.1",
-
+    PropertyTitleNonObligatedIssuer_3_1 = "3.1",
     /**
      * Τίτλος Κτήσης (άρνηση έκδοσης από υπόχρεο Εκδότη)
      */
-    PropertyTitleIssuerDenial = "3.2",
-
+    PropertyTitleIssuerDenial_3_2 = "3.2",
     /**
      * Πιστωτικό Τιμολόγιο / Συσχετιζόμενο
      */
-    CreditInvoiceRelated = "5.1",
-
+    CreditInvoiceRelated_5_1 = "5.1",
     /**
      * Πιστωτικό Τιμολόγιο / Μη Συσχετιζόμενο
      */
-    CreditInvoiceUnrelated = "5.2",
-
+    CreditInvoiceUnrelated_5_2 = "5.2",
     /**
      * Στοιχείο Αυτοπαράδοσης
      */
-    SelfDeliveryItem = "6.1",
-
+    SelfDeliveryItem_6_1 = "6.1",
     /**
      * Στοιχείο Ιδιοχρησιμοποίησης
      */
-    SelfUseItem = "6.2",
-
+    SelfUseItem_6_2 = "6.2",
     /**
      * Συμβόλαιο - Έσοδο
      */
-    ContractIncome = "7.1",
-
+    ContractIncome_7_1 = "7.1",
     /**
      * Ενοίκια - Έσοδο
      */
-    RentIncome = "8.1",
-
+    RentIncome_8_1 = "8.1",
     /**
      * Ειδικό Στοιχείο – Απόδειξης Είσπραξης Φόρου Διαμονής
      */
-    SpecialItemResidenceTaxReceipt = "8.2",
-
+    SpecialItemResidenceTaxReceipt_8_2 = "8.2",
     /**
      * Απόδειξη Είσπραξης POS
      */
-    POSReceipt = "8.4",
-
+    POSReceipt_8_4 = "8.4",
     /**
      * Απόδειξη Επιστροφής POS
      */
-    POSRefundReceipt = "8.5",
-
+    POSRefundReceipt_8_5 = "8.5",
     /**
      * Δελτίο Παραγγελίας Εστίασης
      */
-    CateringOrder = "8.6",
-
+    CateringOrder_8_6 = "8.6",
     /**
      * Παραστατικό Διακίνησης Μη Συσχετιζόμενο
      */
-    NonRelatedMovementDocument = "9.3",
-
+    NonRelatedMovementDocument_9_3 = "9.3",
     /**
      * ΑΛΠ
      */
-    ALP = "11.1",
-
+    ALP_11_1 = "11.1",
     /**
      * ΑΠΥ
      */
-    APY = "11.2",
-
+    APY_11_2 = "11.2",
     /**
      * Απλοποιημένο Τιμολόγιο
      */
-    SimplifiedInvoice = "11.3",
-
+    SimplifiedInvoice_11_3 = "11.3",
     /**
      * Πιστωτικό Στοιχ. Λιανικής
      */
-    RetailCreditNote = "11.4",
-
+    RetailCreditNote_11_4 = "11.4",
     /**
      * Απόδειξη Λιανικής Πώλησης για Λογ/σμό Τρίτων
      */
-    RetailSalesReceiptForThirdPartyAccount = "11.5",
-
+    RetailSalesReceiptForThirdPartyAccount_11_5 = "11.5",
     /**
      * Έξοδα - Αγορές Λιανικών Συναλλαγών ημεδαπής / αλλοδαπής
      */
-    RetailPurchasesExpensesDomesticForeign = "13.1",
-
+    RetailPurchasesExpensesDomesticForeign_13_1 = "13.1",
     /**
      * Παροχή Λιανικών Συναλλαγών ημεδαπής / αλλοδαπής
      */
-    RetailSalesProvisionDomesticForeign = "13.2",
-
+    RetailSalesProvisionDomesticForeign_13_2 = "13.2",
     /**
      * Κοινόχρηστα
      */
-    CommonExpenses = "13.3",
-
+    CommonExpenses_13_3 = "13.3",
     /**
      * Συνδρομές
      */
-    Subscriptions = "13.4",
-
+    Subscriptions_13_4 = "13.4",
     /**
      * Παραστατικά Οντότητας ως Αναγράφονται από την ίδια (Δυναμικό)
      */
-    EntityDocumentsSameIssuerDynamic = "13.30",
-
+    EntityDocumentsSameIssuerDynamic_13_30 = "13.30",
     /**
      * Πιστωτικό Στοιχ. Λιανικής ημεδαπής / αλλοδαπής
      */
-    RetailCreditNoteDomesticForeign = "13.31",
-
+    RetailCreditNoteDomesticForeign_13_31 = "13.31",
     /**
      * Τιμολόγιο / Ενδοκοινοτικές Αποκτήσεις
      */
-    InvoiceIntraCommunityAcquisitions = "14.1",
-
+    InvoiceIntraCommunityAcquisitions_14_1 = "14.1",
     /**
      * Τιμολόγιο / Αποκτήσεις Τρίτων Χωρών
      */
-    InvoiceThirdCountryAcquisitions = "14.2",
-
+    InvoiceThirdCountryAcquisitions_14_2 = "14.2",
     /**
      * Τιμολόγιο / Ενδοκοινοτική Λήψη Υπηρεσιών
      */
-    InvoiceIntraCommunityServicesReceipt = "14.3",
-
+    InvoiceIntraCommunityServicesReceipt_14_3 = "14.3",
     /**
      * Τιμολόγιο / Λήψη Υπηρεσιών Τρίτων Χωρών
      */
-    InvoiceThirdCountryServicesReceipt = "14.4",
-
+    InvoiceThirdCountryServicesReceipt_14_4 = "14.4",
     /**
      * ΕΦΚΑ και λοιποί Ασφαλιστικοί Οργανισμοί
      */
-    EFKAAndOtherInsuranceOrganizations = "14.5",
-
+    EFKAAndOtherInsuranceOrganizations_14_5 = "14.5",
     /**
      * Παραστατικά Οντότητας ως Αναγράφονται από την ίδια (Δυναμικό)
      */
-    EntityDocumentsSameIssuerDynamic2 = "14.30",
-
+    EntityDocumentsSameIssuerDynamic2_14_30 = "14.30",
     /**
      * Πιστωτικό ημεδαπής / αλλοδαπής
      */
-    DomesticForeignCredit = "14.31",
-
+    DomesticForeignCredit_14_31 = "14.31",
     /**
      * Συμβόλαιο - Έξοδο
      */
-    ContractOutcome = "15.1",
-
+    ContractOutcome_15_1 = "15.1",
     /**
      * Ενοίκιο Έξοδο
      */
-    RentOutcome = "16.1",
-
+    RentOutcome_16_1 = "16.1",
     /**
      * Μισθοδοσία
      */
-    Salary = "17.1",
-
+    Salary_17_1 = "17.1",
     /**
      * Αποσβέσεις
      */
-    Depreciation = "17.2",
-
+    Depreciation_17_2 = "17.2",
     /**
      * Λοιπές Εγγραφές Τακτοποίησης Εσόδων - Λογιστική Βάση
      */
-    OtherIncomeAdjustmentEntriesAccountingBasis = "17.3",
-
+    OtherIncomeAdjustmentEntriesAccountingBasis_17_3 = "17.3",
     /**
      * Λοιπές Εγγραφές Τακτοποίησης Εσόδων - Φορολογική Βάση
      */
-    OtherIncomeAdjustmentEntriesTaxBasis = "17.4",
-
+    OtherIncomeAdjustmentEntriesTaxBasis_17_4 = "17.4",
     /**
      * Λοιπές Εγγραφές Τακτοποίησης Εξόδων - Λογιστική Βάση
      */
-    OtherExpensesAdjustmentEntriesAccountingBasis = "17.5",
-
+    OtherExpensesAdjustmentEntriesAccountingBasis_17_5 = "17.5",
     /**
      * Λοιπές Εγγραφές Τακτοποίησης Εξόδων - Φορολογική Βάση
      */
-    OtherExpensesAdjustmentEntriesTaxBasis = "17.6",
+    OtherExpensesAdjustmentEntriesTaxBasis_17_6 = "17.6"
 }
 
 export enum VatCategoryEnumType {

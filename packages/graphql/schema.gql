@@ -133,11 +133,12 @@ type InvoiceType {
 
 type RequestedBookInfo {
   continuationToken: String
+  counterVatNumber: String!
   count: Float!
   deductionsAmount: Float
   feesAmount: Float
   grossValue: Float
-  invType: String!
+  invType: InvoiceEnumType!
   invoiceDetailType: InvoiceDetailEnumType
   issueDate: DateTime!
   maxMark: String
@@ -151,6 +152,58 @@ type RequestedBookInfo {
   withheldAmount: Float
 }
 
+enum InvoiceEnumType {
+  InvoiceSales_1_1
+  InvoiceSalesIntraCommunityDeliveries_1_2
+  InvoiceSalesThirdCountryDeliveries_1_3
+  InvoiceSalesThirdPartyAccount_1_4
+  InvoiceSalesThirdPartySettlement_1_5
+  InvoiceSalesSupplementaryDocument_1_6
+  InvoiceSupply_2_1
+  InvoiceSupplyIntraCommunityServices_2_2
+  InvoiceSupplyThirdCountryServices_2_3
+  InvoiceSupplySupplementaryDocument_2_4
+  PropertyTitleNonObligatedIssuer_3_1
+  PropertyTitleIssuerDenial_3_2
+  CreditInvoiceRelated_5_1
+  CreditInvoiceUnrelated_5_2
+  SelfDeliveryItem_6_1
+  SelfUseItem_6_2
+  ContractIncome_7_1
+  RentIncome_8_1
+  SpecialItemResidenceTaxReceipt_8_2
+  POSReceipt_8_4
+  POSRefundReceipt_8_5
+  CateringOrder_8_6
+  NonRelatedMovementDocument_9_3
+  ALP_11_1
+  APY_11_2
+  SimplifiedInvoice_11_3
+  RetailCreditNote_11_4
+  RetailSalesReceiptForThirdPartyAccount_11_5
+  RetailPurchasesExpensesDomesticForeign_13_1
+  RetailSalesProvisionDomesticForeign_13_2
+  CommonExpenses_13_3
+  Subscriptions_13_4
+  EntityDocumentsSameIssuerDynamic_13_30
+  RetailCreditNoteDomesticForeign_13_31
+  InvoiceIntraCommunityAcquisitions_14_1
+  InvoiceThirdCountryAcquisitions_14_2
+  InvoiceIntraCommunityServicesReceipt_14_3
+  InvoiceThirdCountryServicesReceipt_14_4
+  EFKAAndOtherInsuranceOrganizations_14_5
+  EntityDocumentsSameIssuerDynamic2_14_30
+  DomesticForeignCredit_14_31
+  ContractOutcome_15_1
+  RentOutcome_16_1
+  Salary_17_1
+  Depreciation_17_2
+  OtherIncomeAdjustmentEntriesAccountingBasis_17_3
+  OtherIncomeAdjustmentEntriesTaxBasis_17_4
+  OtherExpensesAdjustmentEntriesAccountingBasis_17_5
+  OtherExpensesAdjustmentEntriesTaxBasis_17_6
+}
+
 enum InvoiceDetailEnumType {
   ThirdPartySalesClearing
   FeeFromThirdPartySales
@@ -158,4 +211,5 @@ enum InvoiceDetailEnumType {
 
 type Query {
   expenses(from: DateTime!, to: DateTime!): [RequestedBookInfo!]!
+  income(from: DateTime!, to: DateTime!): [RequestedBookInfo!]!
 }

@@ -17,4 +17,12 @@ export class ExpensesResolver {
     ): Promise<models.RequestedBookInfo[]> {
         return this.client.expenses(from, to)
     }
+
+    @Query(returns => [models.RequestedBookInfo])
+    async income(
+        @Args('from', { type: () => Date }) from: Date,
+        @Args('to', { type: () => Date }) to: Date
+    ): Promise<models.RequestedBookInfo[]> {
+        return this.client.income(from, to)
+    }
 }

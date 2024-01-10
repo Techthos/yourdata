@@ -5,6 +5,10 @@ import { Length, validateSync, IsEnum, IsOptional } from 'class-validator';
 import { IncomingHttpHeaders } from "http"
 import { FastifyRequest } from "fastify"
 import { MyDataClient, config } from "@yourdata/sdk"
+import * as winston from 'winston';
+
+
+const { DEBUG } = process.env
 
 export enum Environments {
     TEST = "TEST",
@@ -48,11 +52,25 @@ export class YourDataService {
         this.client = new MyDataClient(
             headers['aade-user-id'],
             headers['ocp-apim-subscription-key'],
-            config.AADE_ENVIRONMENTS[headers.environment]
+            config.AADE_ENVIRONMENTS[headers.environment],
+            {
+                logger: {
+                    level: DEBUG ? 'debug' : 'info',
+                    transports: [
+                        new winston.transports.Console({
+                            format: winston.format.json()
+                        })
+                    ]
+                }
+            }
         )
     }
 
     async expenses(from: Date, to: Date) {
         return this.client.requestMyExpenses(from, to)
+    }
+
+    async income(from: Date, to: Date) {
+        return this.client.requestMyIncome(from, to)
     }
 }

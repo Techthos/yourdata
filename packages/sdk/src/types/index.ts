@@ -206,7 +206,7 @@ export type RequestedDoc = {
 export type RequestedBookInfo = {
     continuationToken?: unknown
     issueDate: Date
-    invType: string
+    invType: enums.InvoiceEnumType
     selfpricing?: boolean
     invoiceDetailType?: enums.InvoiceDetailEnumType
     netValue?: number

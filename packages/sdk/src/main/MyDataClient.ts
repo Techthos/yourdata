@@ -6,18 +6,28 @@ import moment from "moment"
 import { DATE_REQUEST_FORMAT } from "../helpers/constants"
 import { ENV } from "./config"
 
-
-
+import { Logger, LoggerOptions, createLogger } from "winston"
 
 type MyDataServices = "SendInvoices" | "RequestMyIncome" | "RequestMyExpenses"
 
+export type MyDataClientOptions = {
+    logger?: LoggerOptions
+}
 
 export class MyDataClient {
+
+    public readonly logger: Logger
+
     constructor(
         private readonly username: string = ENV.AADE_USER_ID,
         private readonly subscriptionKey: string = ENV.AADE_SUB_KEY,
         private readonly endpoint: string = ENV.AADE_ENDPOINT,
+        options: MyDataClientOptions = {}
     ) {
+
+        this.logger = createLogger({
+            ...(options.logger || {}),
+        })
     }
 
 
@@ -39,19 +49,31 @@ export class MyDataClient {
         const url = new URL(`${this.endpoint}/${service}`)
         url.search = searchParams.toString()
 
+        this.logger.debug({GET: url})
+
         const response = await fetch(url, {
             headers: {
                 ...(this.authHeaders)
             },
+        })
+        const body = await response.text()
+
+        this.logger.debug({
+            status: response.status,
+            message: response.statusText,
+            body
         })
 
         if(response.status !== 200) {
             throw new Error(`HTTPError: ${response.status} - ${response.statusText}`)
         }
 
-        const xml: string = await response.text()
+        const data =  parseXML(body) as {RequestedBookInfo: { bookInfo: RequestedBookInfo[] }}
 
-        const data =  parseXML(xml) as {RequestedBookInfo: { bookInfo: RequestedBookInfo[] }}
+        this.logger.debug({
+            parseData: data
+        })
+
 
         if(data && data.RequestedBookInfo && data.RequestedBookInfo.bookInfo && data.RequestedBookInfo.bookInfo.length) {
             return data.RequestedBookInfo.bookInfo

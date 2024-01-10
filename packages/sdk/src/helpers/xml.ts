@@ -54,6 +54,7 @@ const STRING_TYPES = [
     "InvoicesDoc.invoice.counterpart.address.postalCode",
     "InvoicesDoc.invoice.counterpart.vatNumber",
     "InvoicesDoc.invoice.issuer.vatNumber",
+    "RequestedBookInfo.bookInfo.invType"
 ]
 
 export function parseXML(xml: string): unknown {
