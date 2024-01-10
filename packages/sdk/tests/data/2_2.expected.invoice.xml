@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InvoicesDoc xmlns="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" xmlns:ecls="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" xsi:schemaLocation="http://www.aade.gr/myDATA/invoice/v1.0/InvoicesDoc-v0.6.xsd">
+  <invoice>
+    <invoiceHeader>
+      <series>A</series>
+      <aa>0004</aa>
+      <invoiceType>2.2</invoiceType>
+      <issueDate>2020-04-08</issueDate>
+      <currency>EUR</currency>
+    </invoiceHeader>
+    <issuer>
+      <branch>1</branch>
+      <country>GR</country>
+      <vatNumber>794096631</vatNumber>
+    </issuer>
+    <counterpart>
+      <branch>1</branch>
+      <country>DE</country>
+      <name>Webrunners GmbH</name>
+      <vatNumber>DE999999999</vatNumber>
+      <address>
+        <city>Cologne</city>
+        <postalCode>57123</postalCode>
+      </address>
+    </counterpart>
+    <invoiceDetails>
+      <netValue>100</netValue>
+      <vatAmount>0</vatAmount>
+      <vatCategory>7</vatCategory>
+      <vatExemptionCategory>4</vatExemptionCategory>
+      <lineNumber>1</lineNumber>
+      <incomeClassification>
+        <icls:classificationType>E3_561_005</icls:classificationType>
+        <icls:classificationCategory>category1_3</icls:classificationCategory>
+        <icls:amount>100.00</icls:amount>
+    </incomeClassification>
+    </invoiceDetails>
+    <invoiceSummary>
+      <totalNetValue>100.00</totalNetValue>
+      <totalVatAmount>0.00</totalVatAmount>
+      <totalWithheldAmount>0.00</totalWithheldAmount>
+      <totalFeesAmount>0.00</totalFeesAmount>
+      <totalStampDutyAmount>0.00</totalStampDutyAmount>
+      <totalOtherTaxesAmount>0.00</totalOtherTaxesAmount>
+      <totalDeductionsAmount>0.00</totalDeductionsAmount>
+      <totalGrossValue>100.00</totalGrossValue>
+      <incomeClassification>
+        <icls:classificationType>E3_561_005</icls:classificationType>
+        <icls:classificationCategory>category1_3</icls:classificationCategory>
+        <icls:amount>100.00</icls:amount>
+    </incomeClassification>
+  </invoiceSummary>
+  </invoice>
+</InvoicesDoc>

@@ -1,0 +1,161 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type InvoiceHeaderType {
+  aa: String!
+  correlatedInvoices: String
+  currency: String
+  dispatchDate: DateTime
+  dispatchTime: DateTime
+  exchangeRate: Float
+  fuelInvoice: Boolean
+  invoiceType: String!
+  invoiceVariationType: Float
+  issueDate: DateTime!
+  movePurpose: Float
+  otherCorrelatedEntities: Float
+  selfPricing: Boolean
+  series: String!
+  specialInvoiceCategory: Float
+  vatPaymentSuspension: Boolean
+  vehicleNumber: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ExpensesClassificationType {
+  id: Float
+  amount: Float!
+  classificationType: String
+  classificationCategory: String
+}
+
+type IncomeClassificationType {
+  id: Float
+  amount: Float!
+  classificationType: String
+  classificationCategory: String!
+}
+
+type AddressType {
+  city: String!
+  number: String
+  postalCode: String!
+  street: String
+}
+
+type PartyType {
+  address: AddressType
+  branch: Float!
+  country: String!
+  countryDocumentId: String
+  documentIdNo: String
+  name: String
+  supplyAccountNo: String
+  vatNumber: String!
+}
+
+type ShipType {
+  applicationDate: DateTime!
+  applicationId: String!
+  doy: String
+  shipID: String!
+}
+
+type InvoiceRowType {
+  deductionsAmount: Float
+  dienergia: ShipType
+  discountOption: Boolean
+  expense: ExpensesClassificationType
+  feesAmount: Float
+  feesPercentCategory: Float
+  fuelCode: Float
+  income: IncomeClassificationType
+  invoiceDetailType: Float
+  itemDescr: String
+  lineComments: String
+  lineNumber: Float
+  measurementUnit: Float
+  netValue: Float!
+  otherTaxesAmount: Float
+  otherTaxesPercentCategory: Float
+  quantity15: Float
+  quantity: Float
+  recType: Float
+  stampDutyAmount: String
+  stampDutyPercentCategory: Float
+  vatAmount: Float!
+  vatCategory: Float!
+  vatExemptionCategory: Float
+  withheldAmount: Float
+  withheldPercentCategory: String
+}
+
+type PaymentMethod {
+  amount: Float!
+  paymentMethodInfo: String
+  type: Float!
+}
+
+type InvoiceSummaryType {
+  expenses: [ExpensesClassificationType!]
+  incomes: [IncomeClassificationType!]
+  totalDeductionsAmount: Float!
+  totalFeesAmount: Float!
+  totalGrossValue: Float!
+  totalNetValue: Float!
+  totalOtherTaxesAmount: Float!
+  totalStampDutyAmount: Float!
+  totalVatAmount: Float!
+  totalWithheldAmount: Float!
+}
+
+type InvoiceType {
+  authenticationCode: String
+  cancelledByMark: Float
+  counterpart: PartyType
+  invoiceDetails: [InvoiceRowType!]
+  invoiceHeader: InvoiceHeaderType!
+  invoiceSummary: InvoiceSummaryType
+  issuer: PartyType
+  mark: Float
+  otherTransportDetails: String
+  paymentMethod: PaymentMethod!
+  qrCodeUrl: String
+  taxesTotals: String
+  transmissionFailure: Float
+  uid: String
+}
+
+type RequestedBookInfo {
+  continuationToken: String
+  count: Float!
+  deductionsAmount: Float
+  feesAmount: Float
+  grossValue: Float
+  invType: String!
+  invoiceDetailType: InvoiceDetailEnumType
+  issueDate: DateTime!
+  maxMark: String
+  minMark: String
+  netValue: Float
+  otherTaxesAmount: Float
+  selfpricing: Boolean
+  stampDutyAmount: Float
+  thirdPartyAmount: Float
+  vatAmount: Float
+  withheldAmount: Float
+}
+
+enum InvoiceDetailEnumType {
+  ThirdPartySalesClearing
+  FeeFromThirdPartySales
+}
+
+type Query {
+  expenses(from: DateTime!, to: DateTime!): [RequestedBookInfo!]!
+}

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "module": "commonjs",
+    "target": "ES2020",
+    "declaration": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "strict": true,
+    "downlevelIteration": true,
+    "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "types": [
+      "bun-types"
+    ],
+    "paths": {
+      "@types": ["./src/types"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@main/*": ["./src/main/*"],
+      "@main": ["./src/main"]
+    }
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
+}

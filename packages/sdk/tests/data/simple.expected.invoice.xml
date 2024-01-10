@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InvoicesDoc xmlns="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" xmlns:ecls="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" xsi:schemaLocation="http://www.aade.gr/myDATA/invoice/v1.0/InvoicesDoc-v0.6.xsd">
+    <invoice>
+        <issuer>
+            <branch>1</branch>
+            <country>GR</country>
+            <vatNumber>794096631</vatNumber>
+        </issuer>
+        <counterpart>
+            <branch>1</branch>
+            <country>DE</country>
+            <vatNumber>DE999999999</vatNumber>
+            <address>
+                <city>Cologne</city>
+                <postalCode>57123</postalCode>
+            </address>
+        </counterpart>
+    </invoice>
+</InvoicesDoc>
