@@ -1,5 +1,5 @@
-import { Field, ID, ObjectType, registerEnumType } from "@nestjs/graphql";
-import { types } from "@yourdata/sdk"
+import { Field, Float, ID, InputType, ObjectType, registerEnumType } from "@nestjs/graphql";
+import { DocumentRequestArgs, types } from "@yourdata/sdk"
 
 registerEnumType(types.CountryCode, { name: "CountryCode" })
 
@@ -392,11 +392,14 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
 
     @Field()
     count: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     deductionsAmount?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     feesAmount?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     grossValue?: number;
 
     @Field(type => types.InvoiceEnumType)
@@ -404,24 +407,58 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
 
     @Field(type => types.InvoiceDetailEnumType, { nullable: true })
     invoiceDetailType?: types.InvoiceDetailEnumType;
+
     @Field()
     issueDate: Date;
     @Field({ nullable: true })
+
     maxMark?: string;
     @Field({ nullable: true })
     minMark?: string;
-    @Field({ nullable: true })
+
+    @Field(type => Float, { nullable: true })
     netValue?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     otherTaxesAmount?: number;
+
     @Field({ nullable: true })
     selfpricing?: boolean;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     stampDutyAmount?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     thirdPartyAmount?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     vatAmount?: number;
-    @Field({ nullable: true })
+
+    @Field( type => Float, { nullable: true })
     withheldAmount?: number;
+}
+
+@InputType()
+export class RequestBookInfoInput implements DocumentRequestArgs {
+    @Field()
+    dateFrom: Date;
+
+    @Field()
+    dateTo: Date;
+
+    @Field({ nullable: true })
+    counterVatNumber?: string;
+
+    @Field({ nullable: true })
+    entityVatNumber?: string;
+
+    @Field(type => types.InvoiceEnumType, { nullable: true })
+    invType?: types.InvoiceEnumType;
+
+    @Field({ nullable: true })
+    nextPartitionKey?: string;
+
+    @Field({ nullable: true })
+    nextRowKey?: string;
+
 }

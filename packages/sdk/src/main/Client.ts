@@ -1,4 +1,4 @@
-import { DateDef, RequestedBookInfo, ResponseDocXML } from "../types"
+import { DateDef, InvoiceEnumType, RequestedBookInfo, ResponseDocXML } from "../types"
 import { InvoiceBuilder } from "./InvoiceBuilder"
 import { parseXML } from "../helpers/xml"
 import { URL, URLSearchParams } from "url"
@@ -8,13 +8,23 @@ import { ENV } from "./config"
 
 import { Logger, LoggerOptions, createLogger } from "winston"
 
-type MyDataServices = "SendInvoices" | "RequestMyIncome" | "RequestMyExpenses"
+type YourDataServices = "SendInvoices" | "RequestMyIncome" | "RequestMyExpenses"
 
-export type MyDataClientOptions = {
+export type YourDataClientOptions = {
     logger?: LoggerOptions
 }
 
-export class MyDataClient {
+export type DocumentRequestArgs = {
+    dateFrom: DateDef,
+    dateTo: DateDef,
+    counterVatNumber?: string,
+    entityVatNumber?: string,
+    invType?: InvoiceEnumType,
+    nextPartitionKey?: string,
+    nextRowKey?: string
+}
+
+export class YourDataClient {
 
     public readonly logger: Logger
 
@@ -22,7 +32,7 @@ export class MyDataClient {
         private readonly username: string = ENV.AADE_USER_ID,
         private readonly subscriptionKey: string = ENV.AADE_SUB_KEY,
         private readonly endpoint: string = ENV.AADE_ENDPOINT,
-        options: MyDataClientOptions = {}
+        options: YourDataClientOptions = {}
     ) {
 
         this.logger = createLogger({
@@ -43,7 +53,7 @@ export class MyDataClient {
         }
     }
 
-    private async get<T>(service: MyDataServices, params?: { [key: string]: string }) {
+    private async get<T>(service: YourDataServices, params?: { [key: string]: string }) {
 
         const searchParams = new URLSearchParams(params)
         const url = new URL(`${this.endpoint}/${service}`)
@@ -82,21 +92,23 @@ export class MyDataClient {
         }
     }
 
-    async requestMyIncome(from: DateDef, to: DateDef) {
+    async requestMyIncome(args: DocumentRequestArgs) {
         return await this.get("RequestMyIncome", {
-            dateFrom: moment(from).format(DATE_REQUEST_FORMAT),
-            dateTo: moment(to).format(DATE_REQUEST_FORMAT)
+            ...args,
+            dateFrom: moment(args.dateFrom).format(DATE_REQUEST_FORMAT),
+            dateTo: moment(args.dateTo).format(DATE_REQUEST_FORMAT),
         })
     }
 
-    async requestMyExpenses(from: DateDef, to: DateDef) {
+    async requestMyExpenses(args: DocumentRequestArgs) {
         return await this.get<RequestedBookInfo>("RequestMyExpenses", {
-            dateFrom: moment(from).format(DATE_REQUEST_FORMAT),
-            dateTo: moment(to).format(DATE_REQUEST_FORMAT)
+            ...args,
+            dateFrom: moment(args.dateFrom).format(DATE_REQUEST_FORMAT),
+            dateTo: moment(args.dateTo).format(DATE_REQUEST_FORMAT)
         })
     }
 
-    async sendXML<T>(xml: string, service: MyDataServices): Promise<T[]> {
+    async sendXML<T>(xml: string, service: YourDataServices): Promise<T[]> {
 
         const headers = {
             ...this.authHeaders,

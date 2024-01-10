@@ -4,7 +4,7 @@ import { CONTEXT } from '@nestjs/graphql';
 import { Length, validateSync, IsEnum, IsOptional } from 'class-validator';
 import { IncomingHttpHeaders } from "http"
 import { FastifyRequest } from "fastify"
-import { MyDataClient, config } from "@yourdata/sdk"
+import { YourDataClient, config, DocumentRequestArgs } from "@yourdata/sdk"
 import * as winston from 'winston';
 
 
@@ -39,7 +39,7 @@ export class Headers {
 @Injectable({ scope: Scope.REQUEST })
 export class YourDataService {
 
-    private client: MyDataClient
+    private client: YourDataClient
 
     constructor(@Inject(CONTEXT) private context: {req: FastifyRequest}) {
         const headers = new Headers(context.req.headers)
@@ -49,7 +49,7 @@ export class YourDataService {
             throw err[0]
         }
 
-        this.client = new MyDataClient(
+        this.client = new YourDataClient(
             headers['aade-user-id'],
             headers['ocp-apim-subscription-key'],
             config.AADE_ENVIRONMENTS[headers.environment],
@@ -66,11 +66,11 @@ export class YourDataService {
         )
     }
 
-    async expenses(from: Date, to: Date) {
-        return this.client.requestMyExpenses(from, to)
+    async expenses(args: DocumentRequestArgs) {
+        return this.client.requestMyExpenses(args)
     }
 
-    async income(from: Date, to: Date) {
-        return this.client.requestMyIncome(from, to)
+    async income(args: DocumentRequestArgs) {
+        return this.client.requestMyIncome(args)
     }
 }

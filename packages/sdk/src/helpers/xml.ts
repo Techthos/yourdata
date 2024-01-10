@@ -73,7 +73,7 @@ export function parseXML(xml: string): unknown {
             }
 
             if (Number.isNaN(+tagValue) === false) {
-                return parseInt(tagValue)
+                return parseFloat(tagValue)
             }
 
             return tagValue

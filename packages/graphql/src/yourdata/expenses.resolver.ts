@@ -12,17 +12,16 @@ export class ExpensesResolver {
 
     @Query(returns => [models.RequestedBookInfo])
     async expenses(
-        @Args('from', { type: () => Date }) from: Date,
-        @Args('to', { type: () => Date }) to: Date
+        @Args('input', { type: () => models.RequestBookInfoInput }) input: models.RequestBookInfoInput,
     ): Promise<models.RequestedBookInfo[]> {
-        return this.client.expenses(from, to)
+        return this.client.expenses(input)
     }
 
     @Query(returns => [models.RequestedBookInfo])
     async income(
-        @Args('from', { type: () => Date }) from: Date,
-        @Args('to', { type: () => Date }) to: Date
+        @Args('input', { type: () => models.RequestBookInfoInput }) input: models.RequestBookInfoInput,
+
     ): Promise<models.RequestedBookInfo[]> {
-        return this.client.income(from, to)
+        return this.client.income(input)
     }
 }

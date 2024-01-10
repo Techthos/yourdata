@@ -210,6 +210,16 @@ enum InvoiceDetailEnumType {
 }
 
 type Query {
-  expenses(from: DateTime!, to: DateTime!): [RequestedBookInfo!]!
-  income(from: DateTime!, to: DateTime!): [RequestedBookInfo!]!
+  expenses(input: RequestBookInfoInput!): [RequestedBookInfo!]!
+  income(input: RequestBookInfoInput!): [RequestedBookInfo!]!
+}
+
+input RequestBookInfoInput {
+  dateFrom: DateTime!
+  dateTo: DateTime!
+  counterVatNumber: String
+  entityVatNumber: String
+  invType: InvoiceEnumType
+  nextPartitionKey: String
+  nextRowKey: String
 }

@@ -1,5 +1,5 @@
 import moment from "moment";
-import type { MyDataClient } from "./MyDataClient";
+import type { YourDataClient } from "./Client";
 import { CountryCode, CurrencyCode, InvoiceEnumType, InvoiceHeaderType, InvoiceRowType, InvoiceSummaryType, InvoiceType, PartyType, PaymentMethodDetailType, VatCategoryEnumType } from "../types";
 import { DATE_FORMAT } from "../helpers/constants";
 import { InvoiceSummaryBuilder } from "./InvoiceSummaryBuilder";
@@ -14,7 +14,7 @@ export class InvoiceBuilder {
     private _data: Partial<InvoiceType> = {}
     private _dataItemIndex: Map<number, number> = new Map()
 
-    constructor(private readonly client: MyDataClient) {
+    constructor(private readonly client: YourDataClient) {
     }
 
     setIssuer(party: PartyType) {
