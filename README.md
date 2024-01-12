@@ -1,6 +1,6 @@
 # Yourdata by Techthos L.P.
 
-Yourdata is a set of library written in typescript, it aims to make the use of mydataapi.gov.gr programmatically easier and more developer friendly.
+Yourdata is a set of library written in typescript, it aims to make the use of www.aade.gr/en/mydata programmatically easier and more developer friendly.
 
 
 It provides a complete set of typings about the available API calls and requests including response types.
