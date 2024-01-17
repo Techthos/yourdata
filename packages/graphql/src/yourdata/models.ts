@@ -33,7 +33,7 @@ export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field({ nullable: true })
     correlatedInvoices?: string;
 
-    @Field({ nullable: true })
+    @Field(type => types.CountryCode, { nullable: true })
     currency?: types.CurrencyCode;
 
     @Field({ nullable: true })
@@ -48,19 +48,19 @@ export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field({ nullable: true })
     fuelInvoice?: boolean;
 
-    @Field()
+    @Field(type => types.InvoiceEnumType)
     invoiceType: types.InvoiceEnumType;
 
-    @Field({ nullable: true })
+    @Field(type => types.InvoiceVariationEnumType, { nullable: true })
     invoiceVariationType?: types.InvoiceVariationEnumType;
 
     @Field()
     issueDate: Date;
 
-    @Field({ nullable: true })
+    @Field(type => types.MovePurposeEnumType, { nullable: true })
     movePurpose?: types.MovePurposeEnumType;
 
-    @Field({ nullable: true })
+    @Field(type => types.EntityEnumType, { nullable: true })
     otherCorrelatedEntities?: types.EntityEnumType;
 
     @Field({ nullable: true })
@@ -69,7 +69,7 @@ export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field()
     series: string;
 
-    @Field({ nullable: true })
+    @Field(type => types.SpecialInvoiceCategoryEnumType, { nullable: true })
     specialInvoiceCategory?: types.SpecialInvoiceCategoryEnumType;
 
     @Field({ nullable: true })
@@ -88,10 +88,10 @@ export class ExpensesClassificationType {
     @Field()
     amount: number;
 
-    @Field({ nullable: true })
+    @Field(type => types.ExpensesClassificationEnumType, { nullable: true })
     classificationType?: types.ExpensesClassificationEnumType
 
-    @Field({ nullable: true })
+    @Field(type => types.ExpensesClassificationCategoryEnumType, { nullable: true })
     classificationCategory?: types.ExpensesClassificationCategoryEnumType
 }
 
@@ -103,10 +103,10 @@ export class IncomeClassificationType {
     @Field()
     amount: number;
 
-    @Field({ nullable: true })
+    @Field(type => types.IncomeClassificationEnumType, { nullable: true })
     classificationType?: types.IncomeClassificationEnumType
 
-    @Field()
+    @Field(type => types.IncomeClassificationCategoryEnumType)
     classificationCategory: types.IncomeClassificationCategoryEnumType
 }
 
@@ -129,13 +129,13 @@ export class AddressType implements types.AddressType {
 @ObjectType()
 export class PartyType implements types.PartyType {
 
-    @Field({ nullable: true })
+    @Field(type => AddressType, { nullable: true })
     address?: AddressType;
 
     @Field()
     branch: number;
 
-    @Field()
+    @Field(type => types.CountryCode)
     country: types.CountryCode;
 
     @Field({ nullable: true })
@@ -175,13 +175,13 @@ export class InvoiceRowType implements types.InvoiceRowType {
     @Field({ nullable: true })
     deductionsAmount?: number;
 
-    @Field({ nullable: true })
+    @Field(type => ShipType, { nullable: true })
     dienergia?: ShipType;
 
     @Field({ nullable: true })
     discountOption?: boolean;
 
-    @Field({ nullable: true })
+    @Field(type => ExpensesClassificationType, { nullable: true })
     expense?: ExpensesClassificationType;
 
     @Field({ nullable: true })
@@ -190,13 +190,13 @@ export class InvoiceRowType implements types.InvoiceRowType {
     @Field({ nullable: true })
     feesPercentCategory?: number;
 
-    @Field({ nullable: true })
+    @Field(type => types.FuelCodeEnumType, { nullable: true })
     fuelCode?: types.FuelCodeEnumType;
 
     @Field({ nullable: true })
     income?: IncomeClassificationType;
 
-    @Field({ nullable: true })
+    @Field(type => types.InvoiceDetailEnumType, { nullable: true })
     invoiceDetailType?: types.InvoiceDetailEnumType;
 
     @Field({ nullable: true })
@@ -208,7 +208,7 @@ export class InvoiceRowType implements types.InvoiceRowType {
     @Field({ nullable: true })
     lineNumber?: number;
 
-    @Field({ nullable: true })
+    @Field(type => types.MeasurementUnitEnumType, { nullable: true })
     measurementUnit?: types.MeasurementUnitEnumType;
 
     @Field()
@@ -226,22 +226,22 @@ export class InvoiceRowType implements types.InvoiceRowType {
     @Field({ nullable: true })
     quantity?: number;
 
-    @Field({ nullable: true })
+    @Field(type => types.RecEnumType, { nullable: true })
     recType?: types.RecEnumType;
 
     @Field({ nullable: true })
     stampDutyAmount?: string;
 
-    @Field({ nullable: true })
+    @Field(type => types.StampDutyPercentCategoryEnumType, { nullable: true })
     stampDutyPercentCategory?: types.StampDutyPercentCategoryEnumType;
 
     @Field()
     vatAmount: number;
 
-    @Field()
+    @Field(type => types.VatCategoryEnumType,)
     vatCategory: types.VatCategoryEnumType;
 
-    @Field({ nullable: true })
+    @Field(type => types.VatExemptionCategoryEnumType, { nullable: true })
     vatExemptionCategory?: types.VatExemptionCategoryEnumType;
 
     @Field({ nullable: true })
@@ -260,7 +260,7 @@ export class PaymentMethod implements types.PaymentMethodDetailType {
     @Field({ nullable: true })
     paymentMethodInfo?: string;
 
-    @Field()
+    @Field(type => types.PaymentMethodEnumType)
     type: types.PaymentMethodEnumType;
 
 }
@@ -393,13 +393,13 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
     @Field()
     count: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     deductionsAmount?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     feesAmount?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     grossValue?: number;
 
     @Field(type => types.InvoiceEnumType)
@@ -419,22 +419,22 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
     @Field(type => Float, { nullable: true })
     netValue?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     otherTaxesAmount?: number;
 
     @Field({ nullable: true })
     selfpricing?: boolean;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     stampDutyAmount?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     thirdPartyAmount?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     vatAmount?: number;
 
-    @Field( type => Float, { nullable: true })
+    @Field(type => Float, { nullable: true })
     withheldAmount?: number;
 }
 

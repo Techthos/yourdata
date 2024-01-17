@@ -18,17 +18,17 @@ export enum Environments {
 export class Headers {
 
     constructor(headers: IncomingHttpHeaders) {
-        this['aade-user-id'] = headers['aade-user-id'] as string
-        this['ocp-apim-subscription-key'] = headers['ocp-apim-subscription-key'] as string
+        this['username'] = headers['username'] as string
+        this['subscriptionkey'] = headers['subscriptionkey'] as string
         this.environment = headers['environment'] as Environments || Environments.TEST
 
     }
 
     @Length(2)
-    'aade-user-id': string
+    'username': string
 
     @Length(32)
-    'ocp-apim-subscription-key': string
+    'subscriptionkey': string
 
     @IsOptional()
     @IsEnum(Environments)
@@ -50,8 +50,8 @@ export class YourDataService {
         }
 
         this.client = new YourDataClient(
-            headers['aade-user-id'],
-            headers['ocp-apim-subscription-key'],
+            headers['username'],
+            headers['subscriptionkey'],
             config.AADE_ENVIRONMENTS[headers.environment],
             {
                 logger: {

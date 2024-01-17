@@ -1,0 +1,21 @@
+{
+  expenses(input: {dateFrom: "2024-01-01", dateTo: "2024-01-11"}) {
+    continuationToken
+    counterVatNumber
+    count
+    deductionsAmount
+    feesAmount
+    grossValue
+    invoiceDetailType
+    maxMark
+    minMark
+    netValue
+    invType
+    otherTaxesAmount
+    selfpricing
+    stampDutyAmount
+    thirdPartyAmount
+    vatAmount
+    withheldAmount
+  }
+}
