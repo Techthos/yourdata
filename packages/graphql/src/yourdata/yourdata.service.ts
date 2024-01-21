@@ -4,8 +4,10 @@ import { CONTEXT } from '@nestjs/graphql';
 import { Length, validateSync, IsEnum, IsOptional } from 'class-validator';
 import { IncomingHttpHeaders } from "http"
 import { FastifyRequest } from "fastify"
-import { YourDataClient, config, DocumentRequestArgs } from "@yourdata/sdk"
+import { YourDataClient, config, DocumentRequestArgs, InvoiceBuilder } from "@yourdata/sdk"
 import * as winston from 'winston';
+import { parseXML, serializeInvoiceType } from '@yourdata/sdk/dist/helpers/xml';
+import { RequestedDoc, ResponseDoc } from '@yourdata/sdk/dist/types';
 
 
 const { DEBUG } = process.env
@@ -39,7 +41,7 @@ export class Headers {
 @Injectable({ scope: Scope.REQUEST })
 export class YourDataService {
 
-    private client: YourDataClient
+    public readonly _client: YourDataClient
 
     constructor(@Inject(CONTEXT) private context: {req: FastifyRequest}) {
         const headers = new Headers(context.req.headers)
@@ -49,7 +51,7 @@ export class YourDataService {
             throw err[0]
         }
 
-        this.client = new YourDataClient(
+        this._client = new YourDataClient(
             headers['username'],
             headers['subscriptionkey'],
             config.AADE_ENVIRONMENTS[headers.environment],
@@ -66,11 +68,23 @@ export class YourDataService {
         )
     }
 
+    async send(invoice: InvoiceBuilder): Promise<ResponseDoc> {
+        const response = await this._client.sendXML<ResponseDoc>(serializeInvoiceType(invoice.data), "SendInvoices")
+        
+
+        if(response.length === 1) {
+            const [responseDoc] = response
+            return responseDoc
+        } else {
+            throw new Error("unexpected response.")
+        }
+    }
+
     async expenses(args: DocumentRequestArgs) {
-        return this.client.requestMyExpenses(args)
+        return this._client.requestMyExpenses(args)
     }
 
     async income(args: DocumentRequestArgs) {
-        return this.client.requestMyIncome(args)
+        return this._client.requestMyIncome(args)
     }
 }

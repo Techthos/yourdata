@@ -34,7 +34,6 @@ export class YourDataClient {
         private readonly endpoint: string = ENV.AADE_ENDPOINT,
         options: YourDataClientOptions = {}
     ) {
-
         this.logger = createLogger({
             ...(options.logger || {}),
         })
@@ -115,6 +114,8 @@ export class YourDataClient {
             "Content-Type": "application/xml"
         }
 
+        this.logger.debug({xml})
+
         const response = await fetch(`${this.endpoint}/${service}`, {
             method: "POST",
             headers,
@@ -125,7 +126,11 @@ export class YourDataClient {
             throw new Error(`Response error: ${response.statusText} (${response.status})`)
         }
 
-        const data = parseXML(await response.text()) as ResponseDocXML<T>
+        const text = await response.text()
+
+        this.logger.debug(`Response: \n ${text}`)
+
+        const data = parseXML(text) as ResponseDocXML<T>
 
         if(data && data.ResponseDoc && Array.isArray(data.ResponseDoc.response)) {
             return data.ResponseDoc.response

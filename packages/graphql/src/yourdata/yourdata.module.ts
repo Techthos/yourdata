@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ExpensesResolver } from './expenses.resolver';
+import { YourDataResolver, YourDataResponseDocResolver } from './yourdata.resolver';
 import { YourDataService } from './yourdata.service';
 
 @Module({
-  providers: [ExpensesResolver, YourDataService],
+  providers: [YourDataResolver, YourDataResponseDocResolver, YourDataService],
 })
 export class YourDataModule {}

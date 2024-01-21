@@ -1,5 +1,10 @@
 import { Field, Float, ID, InputType, ObjectType, registerEnumType } from "@nestjs/graphql";
 import { DocumentRequestArgs, types } from "@yourdata/sdk"
+import { IncomeClassificationEnumType, InvoiceEnumType } from "@yourdata/sdk/dist/types";
+
+registerEnumType(types.MovePurposeEnumType, { name: 'MovePurposeEnumType' })
+
+registerEnumType(types.InvoiceVariationEnumType, { name: "InvoiceVariationEnumType" })
 
 registerEnumType(types.CountryCode, { name: "CountryCode" })
 
@@ -11,7 +16,7 @@ registerEnumType(types.PaymentMethodEnumType, { name: "PaymentMethodType" })
 
 registerEnumType(types.ExpensesClassificationCategoryEnumType, { name: "ExpensesClassificationCategoryType" })
 
-registerEnumType(types.ExpensesClassificationEnumType, { name: "ExpensesClassificationType" })
+registerEnumType(types.ExpensesClassificationEnumType, { name: "ExpensesClassificationEnumType" })
 
 registerEnumType(types.MeasurementUnitEnumType, { name: "MeasurementUnitType" })
 
@@ -25,6 +30,16 @@ registerEnumType(types.InvoiceDetailEnumType, { name: "InvoiceDetailEnumType" })
 
 registerEnumType(types.InvoiceEnumType, { name: "InvoiceEnumType" })
 
+registerEnumType(types.EntityEnumType, { name: 'EntityEnumType' })
+
+registerEnumType(types.SpecialInvoiceCategoryEnumType, { name: 'SpecialInvoiceCategoryEnumType' })
+
+registerEnumType(types.IncomeClassificationEnumType, { name: 'IncomeClassificationEnumType' })
+registerEnumType(types.IncomeClassificationCategoryEnumType, { name: 'IncomeClassificationCategoryEnumType' })
+
+registerEnumType(types.FuelCodeEnumType, { name: 'FuelCodeEnumType' })
+
+@InputType("InvoiceHeaderInput")
 @ObjectType()
 export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field()
@@ -33,7 +48,7 @@ export class InvoiceHeaderType implements types.InvoiceHeaderType {
     @Field({ nullable: true })
     correlatedInvoices?: string;
 
-    @Field(type => types.CountryCode, { nullable: true })
+    @Field(type => types.CurrencyCode, { nullable: true })
     currency?: types.CurrencyCode;
 
     @Field({ nullable: true })
@@ -80,6 +95,7 @@ export class InvoiceHeaderType implements types.InvoiceHeaderType {
 
 }
 
+@InputType("ExpensesClassificationInput")
 @ObjectType()
 export class ExpensesClassificationType {
     @Field({ nullable: true })
@@ -95,6 +111,7 @@ export class ExpensesClassificationType {
     classificationCategory?: types.ExpensesClassificationCategoryEnumType
 }
 
+@InputType("IncomeClassificationInput")
 @ObjectType()
 export class IncomeClassificationType {
     @Field({ nullable: true })
@@ -111,6 +128,7 @@ export class IncomeClassificationType {
 }
 
 
+@InputType("AddressInput")
 @ObjectType()
 export class AddressType implements types.AddressType {
     @Field()
@@ -126,6 +144,7 @@ export class AddressType implements types.AddressType {
     street?: string;
 }
 
+@InputType("PartyInput")
 @ObjectType()
 export class PartyType implements types.PartyType {
 
@@ -154,6 +173,7 @@ export class PartyType implements types.PartyType {
     vatNumber: string;
 }
 
+@InputType("ShipInput")
 @ObjectType()
 export class ShipType implements types.ShipType {
     @Field()
@@ -170,6 +190,7 @@ export class ShipType implements types.ShipType {
 
 }
 
+@InputType("InvoiceItemInput")
 @ObjectType()
 export class InvoiceRowType implements types.InvoiceRowType {
     @Field({ nullable: true })
@@ -252,6 +273,7 @@ export class InvoiceRowType implements types.InvoiceRowType {
 
 }
 
+@InputType("PaymentMethodInput")
 @ObjectType()
 export class PaymentMethod implements types.PaymentMethodDetailType {
     @Field()
@@ -265,6 +287,7 @@ export class PaymentMethod implements types.PaymentMethodDetailType {
 
 }
 
+@InputType("InvoiceSummaryInput")
 @ObjectType()
 export class InvoiceSummaryType implements types.InvoiceSummaryType {
     @Field(type => [ExpensesClassificationType], { nullable: true })
@@ -299,6 +322,7 @@ export class InvoiceSummaryType implements types.InvoiceSummaryType {
 
 }
 
+@InputType("InvoiceInput")
 @ObjectType()
 export class InvoiceType implements types.InvoiceType {
 
@@ -308,7 +332,7 @@ export class InvoiceType implements types.InvoiceType {
     @Field({ nullable: true })
     cancelledByMark?: number;
 
-    @Field({ nullable: true })
+    @Field(type => PartyType, { nullable: true })
     counterpart?: PartyType;
 
     @Field(type => [InvoiceRowType], { nullable: true })
@@ -320,7 +344,7 @@ export class InvoiceType implements types.InvoiceType {
     @Field({ nullable: true })
     invoiceSummary?: InvoiceSummaryType;
 
-    @Field({ nullable: true })
+    @Field(type => PartyType, { nullable: true })
     issuer?: PartyType;
 
     @Field({ nullable: true })
@@ -347,9 +371,6 @@ export class InvoiceType implements types.InvoiceType {
 
 @ObjectType()
 export class RequestedDoc implements types.RequestedDoc {
-    @Field(type => ID)
-    id: string
-
     @Field()
     cancellationDate: Date;
 
@@ -436,6 +457,46 @@ export class RequestedBookInfo implements types.RequestedBookInfo {
 
     @Field(type => Float, { nullable: true })
     withheldAmount?: number;
+}
+
+@ObjectType()
+export class ErrorType implements types.ErrorType {
+    @Field()
+    code: string;
+
+    @Field()
+    message: string;
+}
+
+@ObjectType()
+export class ResponseDocType implements types.ResponseDoc {
+    @Field({nullable: true})
+    authenticationCode?: string;
+
+    @Field({nullable: true})
+    cancellationMark?: number;
+
+    @Field({nullable: true})
+    classificationMark?: number;
+
+    @Field(type => [ErrorType])
+    errs?: ErrorType[];
+
+    @Field({nullable: true})
+    index?: number;
+
+    @Field({nullable: true})
+    invoiceMark?: number;
+
+    @Field({nullable: true})
+    invoiceUid?: string;
+
+    @Field({nullable: true})
+    qrUrl?: string;
+
+    @Field({nullable: true})
+    statusCode: string;
+
 }
 
 @InputType()

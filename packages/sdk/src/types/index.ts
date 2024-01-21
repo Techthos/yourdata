@@ -162,7 +162,9 @@ export type ResponseDoc = {
     authenticationCode?: string
     cancellationMark?: number
     qrUrl?: string
-    errors?: ErrorType
+    errors?: {
+        error: ErrorType[]
+    }
 }
 
 export type ResponseDocXML<T> = {

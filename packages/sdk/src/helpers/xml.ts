@@ -45,7 +45,8 @@ const ARRAY_TAGS_JPATHS = [
     "InvoicesDoc.invoice.invoiceDetails",
     "InvoicesDoc.invoice.invoiceSummary.incomeClassification",
     "InvoicesDoc.invoice.invoiceSummary.expensesClassification",
-    "RequestedBookInfo.bookInfo"
+    "RequestedBookInfo.bookInfo",
+    "ResponseDoc.response.errors.error"
 ]
 
 const STRING_TYPES = [

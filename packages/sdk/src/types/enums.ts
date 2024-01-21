@@ -717,73 +717,73 @@ export enum IncomeClassificationCategoryEnumType {
      * Έσοδα από Πώληση Εμπορευμάτων (+) / (-)
      * Revenues from Sale of Goods
      */
-    RevenuesFromSaleOfGoods = "category1_1",
+    RevenuesFromSaleOfGoodsCategory1_1 = "category1_1",
 
     /**
      * Έσοδα από πώληση προϊόντων (+) / (-)
      * Revenues from Product Sales
      */
-    RevenuesFromProductSales = "category1_2",
+    RevenuesFromProductSalesCategory1_2 = "category1_2",
 
     /**
      * Έσοδα από Παροχή Υπηρεσιών (+) / (-)
      * Revenues from Provision of Services
      */
-    RevenuesFromServices = "category1_3",
+    RevenuesFromServicesCategory1_3 = "category1_3",
 
     /**
      * Έσοδα από Πώληση Παγίων (+) / (-)
      * Revenues from Sale of Fixed Assets
      */
-    RevenuesFromSaleOfFixedAssets = "category1_4",
+    RevenuesFromSaleOfFixedAssetsCategory1_4 = "category1_4",
 
     /**
      * Λοιπά Έσοδα! Κέρδη (+)/(-)
      * Other Revenue and Profits
      */
-    OtherRevenueAndProfits = "category1_5",
+    OtherRevenueAndProfitsCategory1_5 = "category1_5",
 
     /**
      * Αυτοπαραδόσεις / Ιδιοχρησιμοποιήσεις (+) / (-)
      * Self-Supply / Personal Use
      */
-    SelfSupplyPersonalUse = "category1_6",
+    SelfSupplyPersonalUseCategory1_6 = "category1_6",
 
     /**
      * Έσοδα για λ/σμο τρίτων (+) / (-)
      * Revenue for Third Party Settlement
      */
-    RevenueForThirdPartySettlement = "category1_7",
+    RevenueForThirdPartySettlementCategory1_7 = "category1_7",
 
     /**
      * Έσοδα προηγούμενων χρήσεων (+)/ (-)
      * Revenue from Previous Years
      */
-    RevenueFromPreviousYears = "category1_8",
+    RevenueFromPreviousYearsCategory1_8 = "category1_8",
 
     /**
      * Έσοδα επομένων χρήσεων (+) / (-)
      * Revenue from Subsequent Years
      */
-    RevenueFromSubsequentYears = "category1_9",
+    RevenueFromSubsequentYearsCategory1_9 = "category1_9",
 
     /**
      * Λοιπές Εγγραφές Τακτοποίησης Εσόδων (+) / (-)
      * Other Revenue Adjustment Entries
      */
-    OtherRevenueAdjustmentEntries = "category1_10",
+    OtherRevenueAdjustmentEntriesCategory1_10 = "category1_10",
 
     /**
      * Λοιπά Πληροφοριακά Στοιχεία Εσόδων (+)/(-)
      * Other Informative Revenue Elements
      */
-    OtherInformativeRevenueElements = "category1_95",
+    OtherInformativeRevenueElementsCategory1_95 = "category1_95",
 
     /**
      * Διακίνηση
      * Distribution
      */
-    Distribution = "category3"
+    DistributionCategory3 = "category3"
 }
 
 export enum IncomeClassificationEnumType {
@@ -791,283 +791,283 @@ export enum IncomeClassificationEnumType {
      * Ιδισπαραγωγή παγίων- Αυτοπαραδόσεις- Καταστροφές αποθεμάτων/Εμπορεύματα
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Goods
      */
-    SelfProductionOfFixedAssetsDestructionOfGoods = "E3_106",
+    SelfProductionOfFixedAssetsDestructionOfGoodsE3_106 = "E3_106",
 
     /**
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων/πρώτες ύλες και λοιπά υλικά
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Raw Materials
      */
-    SelfProductionOfFixedAssetsDestructionOfRawMaterials = "E3_205",
+    SelfProductionOfFixedAssetsDestructionOfRawMaterialsE3_205 = "E3_205",
 
     /**
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων/Προϊόντα και παραγωγή σε εξέλιξη
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Products in Progress
      */
-    SelfProductionOfFixedAssetsDestructionOfInProgressProducts = "E3_210",
+    SelfProductionOfFixedAssetsDestructionOfInProgressProductsE3_210 = "E3_210",
 
     /**
      * Ιδιοπαραγωγή παγίων -Αυτοπαραδόσεις- Καταστροφές αποθεμάτων/πρώτες ύλες και λοιπά υλικά
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Raw Materials and Other Materials
      */
-    SelfProductionOfFixedAssetsDestructionOfMaterials = "E3_305",
+    SelfProductionOfFixedAssetsDestructionOfMaterialsE3_305 = "E3_305",
 
     /**
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων/Πρόίόνεα και παραγωγή σε εξέλιξη
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Products and Production in Progress
      */
-    SelfProductionOfFixedAssetsDestructionOfProductsInProgress = "E3_310",
+    SelfProductionOfFixedAssetsDestructionOfProductsInProgressE3_310 = "E3_310",
 
     /**
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων/Εξοδα παραγωγής
      * Self-Production of Fixed Assets - Self-Deliveries - Destruction of Inventory/Production Expenses
      */
-    SelfProductionOfFixedAssetsDestructionOfProductionExpenses = "E3_318",
+    SelfProductionOfFixedAssetsDestructionOfProductionExpensesE3_318 = "E3_318",
 
     /**
      * πωλήσεις αγαθών και υπηρεσιών Χονδρικές - Επιτηδευματιών
      * Wholesale Sales of Goods and Services - Entrepreneurs
      */
-    WholesaleSalesOfGoodsAndServicesEntrepreneurs = "E3_561_001",
+    WholesaleSalesOfGoodsAndServicesEntrepreneursE3_561_001 = "E3_561_001",
 
 
     /**
      * πωλήσεις αγαθών και υπηρεσιών Χονδρικ{ς βάσει άρθρου 39α παρ 5 του Κώδικα Φ.Π.Α. (Ν.2859/2000)
      * Wholesale Sales of Goods and Services Based on Article 39a Paragraph 5 of the VAT Code (Law 2859/2000)
      */
-    WholesaleSalesGoodsServicesVATCode = "E3_561_002",
+    WholesaleSalesGoodsServicesVATCodeE3_561_002 = "E3_561_002",
 
     /**
      * Πωλήσεις αγαθών και υπηρεσιών Λιανικές - Ιδιωτική Πελατεία
      * Retail Sales of Goods and Services - Private Customers
      */
-    RetailSalesGoodsServicesPrivateCustomers = "E3_561_003",
+    RetailSalesGoodsServicesPrivateCustomersE3_561_003 = "E3_561_003",
 
     /**
      * πωλήσεις αγαθών και υπηρεσιών Λιανικές βάσει άρθρου 39α παρ 5 του Κώδικα Φ.Π.Α. (Ν.2859/2000)
      * Retail Sales of Goods and Services Based on Article 39a Paragraph 5 of the VAT Code (Law 2859/2000)
      */
-    RetailSalesGoodsServicesVATCode = "E3_561_004",
+    RetailSalesGoodsServicesVATCodeE3_561_004 = "E3_561_004",
 
     /**
      * Πωλήσεις αγαθών και υπηρεσιών Εξωτερικού Ενδοκοινοτικές
      * IntraCommunity External Sales of Goods and Services
      */
-    IntraCommunityExternalSales = "E3_561_005",
+    IntraCommunityExternalSalesE3_561_005 = "E3_561_005",
 
     /**
      * Πωλήσεις αγαθών και υπηρεσιών Εξωτερικού Τρίτες Χώρες
      * External Sales of Goods and Services to Third Countries
      */
-    ExternalSalesToThirdCountries = "E3_561_006",
+    ExternalSalesToThirdCountriesE3_561_006 = "E3_561_006",
 
     /**
      * Πωλήσεις αγαθών και υπηρεσιών Λοιπά
      * Other Sales of Goods and Services
      */
-    OtherSalesOfGoodsAndServices = "E3_561_007",
+    OtherSalesOfGoodsAndServicesE3_561_007 = "E3_561_007",
 
     /**
      * Λοιπά συνήθη έσοδα
      * Other Ordinary Income
      */
-    OtherOrdinaryIncome = "E3_562",
+    OtherOrdinaryIncomeE3_562 = "E3_562",
 
     /**
      * Πιστωτικσίτόκοι και συναφή έσοδα
      * Credit Stocks and Related Income
      */
-    CreditStocksAndRelatedIncome = "E3_563",
+    CreditStocksAndRelatedIncomeE3_563 = "E3_563",
 
     /**
      * Πιστωτικές συναλλαγματικές διαφορές
      * Credit Foreign Exchange Differences
      */
-    CreditForeignExchangeDifferences = "E3_564",
+    CreditForeignExchangeDifferencesE3_564 = "E3_564",
 
     /**
      * Σσοδα συμμετοχών
      * Revenue from Participations
      */
-    RevenueFromParticipations = "E3_565",
+    RevenueFromParticipationsE3_565 = "E3_565",
 
     /**
      * Κέρδη από διάθεση μη κυκλοφορσύνεων περιουσιακών στοιχείων
      * Profits from Disposal of Non-Circulating Assets
      */
-    ProfitsFromDisposalOfNonCirculatingAssets = "E3_566",
+    ProfitsFromDisposalOfNonCirculatingAssetsE3_566 = "E3_566",
 
     /**
      * Κέρδη από αναστροφή προβλέψεων και απομειώσεων
      * Gains from Reversal of Provisions and Depreciations
      */
-    GainsFromReversalOfProvisions = "E3_567",
+    GainsFromReversalOfProvisionsE3_567 = "E3_567",
 
     /**
      * Κέρδη από επιμέτρηση στην εύλογη αξία
      * Gains from Fair Value Measurement
      */
-    GainsFromFairValueMeasurement = "E3_568",
+    GainsFromFairValueMeasurementE3_568 = "E3_568",
 
     /**
      * Ασυνήθη έσοδα και κέρδη
      * Unusual Income and Profits
      */
-    UnusualIncomeAndProfits = "E3_570",
+    UnusualIncomeAndProfitsE3_570 = "E3_570",
 
     /**
      * Σξοδα σε ιδιοπαραγωγή
      * Expenses in Self-Production
      */
-    ExpensesInSelfProduction = "E3_595",
+    ExpensesInSelfProductionE3_595 = "E3_595",
 
     /**
      * Επιδοτήσεις - Επιχορηγήσεις
      * Subsidies - Grants
      */
-    SubsidiesAndGrants = "E3_596",
+    SubsidiesAndGrantsE3_596 = "E3_596",
 
     /**
      * Επιδοτήσεις - Επιχορηγήσεις για επενδυτικούς σκοπούς - κάλυψη δαπανών
      * Subsidies - Grants for Investment Purposes - Expense Coverage
      */
-    SubsidiesGrantsForInvestment = "E3_597",
+    SubsidiesGrantsForInvestmentE3_597 = "E3_597",
 
     /**
      * πωλήσεις παγίων Χονδρικές
      * Wholesale Sales of Fixed Assets
      */
-    WholesaleSalesOfFixedAssets = "E3_880_001",
+    WholesaleSalesOfFixedAssetsE3_880_001 = "E3_880_001",
 
     /**
      * πωλήσεις παγίων Λιανικές
      * Retail Sales of Fixed Assets
      */
-    RetailSalesOfFixedAssets = "E3_880_002",
+    RetailSalesOfFixedAssetsE3_880_002 = "E3_880_002",
 
     /**
      * Πωλήσεις Παγίων Εξωτερικού Ενδοκοινοτικές
      * IntraCommunity External Sales of Fixed Assets
      */
-    IntraCommunityExternalSalesOfFixedAssets = "E3_880_003",
+    IntraCommunityExternalSalesOfFixedAssetsE3_880_003 = "E3_880_003",
 
     /**
      * Πωλήσεις Παγίων Εξωτερικού Τρίτες Χώρες
      * External Sales of Fixed Assets to Third Countries
      */
-    ExternalSalesOfFixedAssetsToThirdCountries = "E3_880_004",
+    ExternalSalesOfFixedAssetsToThirdCountriesE3_880_004 = "E3_880_004",
 
     /**
      * πωλήσεις για λογ/σμο Τρίτων Χονδρικές
      * Wholesale Sales on Behalf of Third Parties
      */
-    WholesaleSalesOnBehalfOfThirdParties = "E3_881_001",
+    WholesaleSalesOnBehalfOfThirdPartiesE3_881_001 = "E3_881_001",
 
     /**
      * Πωλήσεις για λογ/σμο Τρίτων Λιανικές
      * Retail Sales on Behalf of Third Parties
      */
-    RetailSalesOnBehalfOfThirdParties = "E3_881_002",
+    RetailSalesOnBehalfOfThirdPartiesE3_881_002 = "E3_881_002",
 
     /**
      * πωλήσεις για λογ/σμο Τρίτων Εξωτερικού Ενδοκοινοτικές
      * IntraCommunity External Sales on Behalf of Third Parties
      */
-    IntraCommunityExternalSalesOnBehalfOfThirdParties = "E3_881_003",
+    IntraCommunityExternalSalesOnBehalfOfThirdPartiesE3_881_003 = "E3_881_003",
 
     /**
      * Πωλήσεις για λογ/σμο Τρίτων Εξωτερικού Τρίτες Χώρες
      * External Sales on Behalf of Third Parties to Third Countries
      */
-    ExternalSalesOnBehalfOfThirdPartiesToThirdCountries = "E3_881_004",
+    ExternalSalesOnBehalfOfThirdPartiesToThirdCountriesE3_881_004 = "E3_881_004",
 
     /**
      * Πωλήσεις αγαθών που υπάγονται σε ΕΦΚ
      * Sales of Goods Subject to Excise Duty
      */
-    SalesOfGoodsSubjectToExciseDuty = "E3_598_001",
+    SalesOfGoodsSubjectToExciseDutyE3_598_001 = "E3_598_001",
 
     /**
      * Πωλήσεις για λογαριασμό αγροτών μέσω αγροτικού συνεταιρισμού κλπ
      * Sales on Behalf of Farmers Through Agricultural Cooperatives, etc.
      */
-    SalesOnBehalfOfFarmersViaCooperatives = "E3_598_003",
+    SalesOnBehalfOfFarmersViaCooperativesE3_598_003 = "E3_598_003",
 }
 
 export enum ExpensesClassificationCategoryEnumType {
     /**
      * category2_1 = Αγορές Εμπορευμάτων
      */
-    PurchasesOfGoods = 'category2_1',
+    PurchasesOfGoodsCategory2_1 = 'category2_1',
 
     /**
      * category2_2 = Αγορές Α'-Β' Υλών
      */
-    PurchasesOfPrimarySecondaryMaterials = 'category2_2',
+    PurchasesOfPrimarySecondaryMaterialsCategory2_2 = 'category2_2',
 
     /**
      * category2_3 = Λήψη Υπηρεσιών
      */
-    ReceiptOfServices = 'category2_3',
+    ReceiptOfServicesCategory2_3 = 'category2_3',
 
     /**
      * category2_4 = Γενικά Έξοδα με δικαίωμα έκπτωσης ΦΠΑ
      */
-    GeneralExpensesWithVATDeduction = 'category2_4',
+    GeneralExpensesWithVATDeductionCategory2_4 = 'category2_4',
 
     /**
      * category2_5 = Γενικά Έξοδα χωρίς δικαίωμα έκπτωσης ΦΠΑ
      */
-    GeneralExpensesWithoutVATDeduction = 'category2_5',
+    GeneralExpensesWithoutVATDeductionCategory2_5 = 'category2_5',
 
     /**
      * category2_6 = Αμοιβές και Παροχές προσωπικού
      */
-    SalariesAndBenefits = 'category2_6',
+    SalariesAndBenefitsCategory2_6 = 'category2_6',
 
     /**
      * category2_7 = Αγορές Παγίων
      */
-    FixedAssetsPurchases = 'category2_7',
+    FixedAssetsPurchasesCategory2_7 = 'category2_7',
 
     /**
      * category2_8 = Αποσβέσεις Παγίων
      */
-    FixedAssetsDepreciation = 'category2_8',
+    FixedAssetsDepreciationCategory2_8 = 'category2_8',
 
     /**
      * category2_9 = Έξοδα για λ/σμο τρίτων
      */
-    ExpensesForThirdPartySettlement = 'category2_9',
+    ExpensesForThirdPartySettlementCategory2_9 = 'category2_9',
 
     /**
      * category2_10 = Έξοδα προηγούμενων χρήσεων
      */
-    ExpensesOfPreviousPeriods = 'category2_10',
+    ExpensesOfPreviousPeriodsCategory2_10 = 'category2_10',
 
     /**
      * category2_11 = Έξοδα επομένων χρήσεων
      */
-    ExpensesOfSubsequentPeriods = 'category2_11',
+    ExpensesOfSubsequentPeriodsCategory2_11 = 'category2_11',
 
     /**
      * category2_12 = Λοιπές Εγγραφές Τακτοποίησης Εξόδων
      */
-    OtherExpenseAdjustmentEntries = 'category2_12',
+    OtherExpenseAdjustmentEntriesCategory2_12 = 'category2_12',
 
     /**
      * category2_13 = Αποθέματα Έναρξης Περιόδου
      */
-    OpeningPeriodInventories = 'category2_13',
+    OpeningPeriodInventoriesCategory2_13 = 'category2_13',
 
     /**
      * category2_14 = Αποθέματα Λήξης Περιόδου
      */
-    ClosingPeriodInventories = 'category2_14',
+    ClosingPeriodInventoriesCategory2_14 = 'category2_14',
 
     /**
      * category2_95 = Λοιπά Πληροφοριακά Στοιχεία Εξόδων
      */
-    OtherInformationalExpenseData = 'category2_95'
+    OtherInformationalExpenseDataCategory2_95 = 'category2_95'
 }
 
 
@@ -1076,385 +1076,385 @@ export enum ExpensesClassificationEnumType {
      * Goods at the beginning
      * Εμπορεύματα έναρξης
      */
-    GoodsAtTheBeginning = "E3_101",
+    GoodsAtTheBeginningE3_101 = "E3_101",
 
     /**
      * Purchases of goods for use (net amount)/Wholesale
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)/Χονδρικές
      */
-    PurchasesOfGoodsForUseWholesale = "E3_102_001",
+    PurchasesOfGoodsForUseWholesaleE3_102_001 = "E3_102_001",
 
     /**
      * Purchases of goods for use (net amount)/Retail
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)/Λιανικές
      */
-    PurchasesOfGoodsForUseRetail = "E3_102_002",
+    PurchasesOfGoodsForUseRetailE3_102_002 = "E3_102_002",
 
     /**
      * Purchases of goods for use (net amount)/Goods of Article 39a, paragraph 5 of the VAT Code (Law 2859/2000)
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)/Αγαθών του άρθρου 39α παρ.5 του Κώδικα Φ.Π.Α. (ν.2859/2000)
      */
-    PurchasesOfGoodsForUseGoodsOfArticle39a = "E3_102_003",
+    PurchasesOfGoodsForUseGoodsOfArticle39aE3_102_003 = "E3_102_003",
 
     /**
      * Purchases of goods for use (net amount)/External IntraCommunity
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)/Εξωτερικού Ενδοκοινοτικές
      */
-    PurchasesOfGoodsForUseExternalIntraCommunity = "E3_102_004",
+    PurchasesOfGoodsForUseExternalIntraCommunityE3_102_004 = "E3_102_004",
 
     /**
      * Purchases of goods for use (net amount)/External Third Countries
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)/Εξωτερικού Τρίτες Χώρες
      */
-    PurchasesOfGoodsForUseExternalThirdCountries = "E3_102_005",
+    PurchasesOfGoodsForUseExternalThirdCountriesE3_102_005 = "E3_102_005",
 
     /**
      * Purchases of goods for use (net amount)/Other
      * Αγορές εμπορευμάτων χρήσης (καθαρό ποσό)Λοιπά
      */
-    PurchasesOfGoodsForUseOther = "E3_102_006",
+    PurchasesOfGoodsForUseOtherE3_102_006 = "E3_102_006",
 
     /**
      * Goods at the end
      * Εμπορεύματα λήξης
      */
-    GoodsAtTheEnd = "E3_104",
+    GoodsAtTheEndE3_104 = "E3_104",
 
     /**
      * Raw materials and production starting materials/Production
      * Πρώτες ύλες και υλικά έναρξης/Παραγωγή
      */
-    RawMaterialsAndProductionStartingMaterialsProduction = "E3_201",
+    RawMaterialsAndProductionStartingMaterialsProductionE3_201 = "E3_201",
 
     /**
      * Purchases of raw materials and materials for use (net amount)/Wholesale
      * Αγορές πρώτων υλών και υλικών χρήσης (καθαρό ποσό)/Χονδρικές
      */
-    PurchasesOfRawMaterialsWholesale = "E3_202_001",
+    PurchasesOfRawMaterialsWholesaleE3_202_001 = "E3_202_001",
 
     /**
      * Purchases of raw materials and materials for use (net amount)/Retail
      * Αγορές πρώτων υλών και υλικών χρήσης (καθαρό ποσό)/Λιανικές
      */
-    PurchasesOfRawMaterialsRetail = "E3_202_002",
+    PurchasesOfRawMaterialsRetailE3_202_002 = "E3_202_002",
 
     /**
      * Purchases of raw materials and materials for use (net amount)/External IntraCommunity
      * Αγορές πρώτων υλών και υλικών χρήσης (καθαρό ποσό)/Εξωτερικού Ενδοκοινοτικές
      */
-    PurchasesOfRawMaterialsExternalIntraCommunity = "E3_202_003",
+    PurchasesOfRawMaterialsExternalIntraCommunityE3_202_003 = "E3_202_003",
 
     /**
      * Purchases of raw materials and materials for use (net amount)/External Third Countries
      * Αγορές πρώτων υλών και υλικών χρήσης (καθαρό ποσό)/Εξωτερικού Τρίτες Χώρες
      */
-    PurchasesOfRawMaterialsExternalThirdCountries = "E3_202_004",
+    PurchasesOfRawMaterialsExternalThirdCountriesE3_202_004 = "E3_202_004",
 
     /**
      * Purchases of raw materials and materials for use (net amount)/Other
      * Αγορές πρώτων υλών και υλικών χρήσης(καθαρό ποσό)/Λοιπά
      */
-    PurchasesOfRawMaterialsOther = "E3_202_005",
+    PurchasesOfRawMaterialsOtherE3_202_005 = "E3_202_005",
 
     /**
      * Ending inventories of raw materials and materials/Production
      * Αποθέματα λήξης πρώτων υλών και υλικών/Παραγωγή
      */
-    EndingInventoriesOfRawMaterials = "E3_204",
+    EndingInventoriesOfRawMaterialsE3_204 = "E3_204",
 
     /**
      * Products and work in progress at the beginning/Production
      * Προϊόντα και παραγωγή σε εξέλιξη έναρξης/Παραγωγή
      */
-    ProductsAndWorkInProgressAtTheBeginning = "E3_207",
+    ProductsAndWorkInProgressAtTheBeginningE3_207 = "E3_207",
 
     /**
      * Adjustment of animals, plants, and goods
      * Απομείωση ζώων -φυτών- εμπορευμάτων
      */
-    AdjustmentOfAnimalsPlantsAndGoods = "E3_314",
+    AdjustmentOfAnimalsPlantsAndGoodsE3_314 = "E3_314",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων-Αυτοπαραδόσεις- Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets = "E3_106",
+    SelfProductionOfFixedAssetsE3_106 = "E3_106",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων-Αυτοπαραδόσεις- Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets2 = "E3_205",
+    SelfProductionOfFixedAssets2E3_205 = "E3_205",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets3 = "E3_305",
+    SelfProductionOfFixedAssets3E3_305 = "E3_305",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets4 = "E3_210",
+    SelfProductionOfFixedAssets4E3_210 = "E3_210",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets5 = "E3_310",
+    SelfProductionOfFixedAssets5E3_310 = "E3_310",
 
     /**
      * Self-production of fixed assets - Self-deliveries - Destruction of inventories
      * Ιδιοπαραγωγή παγίων - Αυτοπαραδόσεις - Καταστροφές αποθεμάτων
      */
-    SelfProductionOfFixedAssets6 = "E3_318",
+    SelfProductionOfFixedAssets6E3_318 = "E3_318",
 
     /**
      * Purchases of goods subject to Excise Duty
      * Αγορές αγαθών που υπάγονται σε ΕΦΚ
      */
-    PurchasesOfGoodsSubjectToExciseDuty = "E3_598_002",
+    PurchasesOfGoodsSubjectToExciseDutyE3_598_002 = "E3_598_002",
 
     /**
      * Losses from disposal-withdrawal of non-current assets
      * Ζημμιές από διάθεση-απόσυρση μη κυκλοφορούντων περιουσιακών στοιχείων
      */
-    LossesFromDisposalWithdrawalOfNonCurrentAssets = "E3_584",
+    LossesFromDisposalWithdrawalOfNonCurrentAssetsE3_584 = "E3_584",
 
     /**
      * Management fees for domestic and foreign management
      * Προμήθειες διαχείρισης ημεδαπής - αλλοδαπής (management fees)
      */
-    ManagementFees = "E3_585_001",
+    ManagementFeesE3_585_001 = "E3_585_001",
 
     /**
      * Expenses from related companies
      * Δαπάνες από συνδεδεμένες επιχειρήσεις
      */
-    ExpensesFromRelatedCompanies = "E3_585_002",
+    ExpensesFromRelatedCompaniesE3_585_002 = "E3_585_002",
 
     /**
      * Expenses from non-cooperating countries or countries with preferential tax regimes
      * Δαπάνες από μη συνεργαζόμενα κράτη ή από κράτη με προνομιακό φορολογικό καθεστώς
      */
-    ExpensesFromNonCooperatingCountries = "E3_585_003",
+    ExpensesFromNonCooperatingCountriesE3_585_003 = "E3_585_003",
 
     /**
      * Expenses for informative conferences
      * Δαπάνες για ενημερωτικές ημερίδες
      */
-    ExpensesForInformativeConferences = "E3_585_004",
+    ExpensesForInformativeConferencesE3_585_004 = "E3_585_004",
 
     /**
      * Reception and accommodation expenses
      * Έξοδα υποδοχής και φιλοξενίας
      */
-    ReceptionAndAccommodationExpenses = "E3_585_005",
+    ReceptionAndAccommodationExpensesE3_585_005 = "E3_585_005",
 
     /**
      * Travel expenses
      * Έξοδα ταξιδιών
      */
-    TravelExpenses = "E3_585_006",
+    TravelExpensesE3_585_006 = "E3_585_006",
 
     /**
      * Social security contributions for self-employed individuals
      * Ασφαλιστικές Εισφορές Αυτοαπασχολούμενων
      */
-    SocialSecurityContributions = "E3_585_007",
+    SocialSecurityContributionsE3_585_007 = "E3_585_007",
 
     /**
      * Expenses and commissions for farmers' orders
      * Έξοδα και προμήθειες παραγγελιοδόχου για λογαριασμό αγροτών
      */
-    ExpensesAndCommissionsForFarmers = "E3_585_008",
+    ExpensesAndCommissionsForFarmersE3_585_008 = "E3_585_008",
 
     /**
      * Other fees for domestic services
      * Λοιπές Αμοιβές για υπηρεσίες ημεδαπής
      */
-    OtherFeesForDomesticServices = "E3_585_009",
+    OtherFeesForDomesticServicesE3_585_009 = "E3_585_009",
 
     /**
      * Other fees for foreign services
      * Λοιπές Αμοιβές για υπηρεσίες αλλοδαπής
      */
-    OtherFeesForForeignServices = "E3_585_010",
+    OtherFeesForForeignServicesE3_585_010 = "E3_585_010",
 
     /**
      * Energy
      * Ενέργεια
      */
-    Energy = "E3_585_011",
+    EnergyE3_585_011 = "E3_585_011",
 
     /**
      * Water supply
      * Ύδρευση
      */
-    WaterSupply = "E3_585_012",
+    WaterSupplyE3_585_012 = "E3_585_012",
 
     /**
      * Telecommunications
      * Τηλεπικοινωνίες
      */
-    Telecommunications = "E3_585_013",
+    TelecommunicationsE3_585_013 = "E3_585_013",
 
     /**
      * Rent
      * Ενοίκια
      */
-    Rent = "E3_585_014",
+    RentE3_585_014 = "E3_585_014",
 
     /**
      * Advertising and promotion
      * Διαφήμιση και προβολή
      */
-    AdvertisingAndPromotion = "E3_585_015",
+    AdvertisingAndPromotionE3_585_015 = "E3_585_015",
 
     /**
      * Other expenses
      * Λοιπά έξοδα
      */
-    OtherExpenses = "E3_585_016",
+    OtherExpensesE3_585_016 = "E3_585_016",
 
     /**
      * Miscellaneous operating expenses Z2
      * Διάφορα λειτουργικά έξοδα Ζ2
      */
-    MiscellaneousOperatingExpensesZ2 = "E3_585_017",
+    MiscellaneousOperatingExpensesZ2E3_585_017 = "E3_585_017",
 
     /**
      * Interest and related expenses
      * Τόκοι και συναφή έξοδα
      */
-    InterestAndRelatedExpenses = "E3_586",
+    InterestAndRelatedExpensesE3_586 = "E3_586",
 
     /**
      * Amortization
      * Αποσβέσεις
      */
-    Amortization = "E3_587",
+    AmortizationE3_587 = "E3_587",
 
     /**
      * Unusual expenses, losses, and fines
      * Ασυνήθεις έξοδα, ζημιές και πρόστιμα
      */
-    UnusualExpensesAndLosses = "E3_588",
+    UnusualExpensesAndLossesE3_588 = "E3_588",
 
     /**
      * Provisions (excluding personnel provisions)
      * Προβλέψεις (εκτός από προβλέψεις για το προσωπικό)
      */
-    Provisions = "E3_589",
+    ProvisionsE3_589 = "E3_589",
 
     /**
      * Purchases of tangible fixed assets (wholesale)
      * Αγορές ενσώματων παγίων χρήσης/Χονδρικές
      */
-    PurchasesOfTangibleFixedAssetsWholesale = "E3_882_001",
+    PurchasesOfTangibleFixedAssetsWholesaleE3_882_001 = "E3_882_001",
 
     /**
      * Purchases of tangible fixed assets (retail)
      * Αγορές ενσώματων παγίων χρήσης/Λιανικές
      */
-    PurchasesOfTangibleFixedAssetsRetail = "E3_882_002",
+    PurchasesOfTangibleFixedAssetsRetailE3_882_002 = "E3_882_002",
 
     /**
      * Purchases of tangible fixed assets (external intra-community)
      * Αγορές ενσώματων παγίων χρήσης/Εξωτερικού Ενδοκοινοτικές
      */
-    PurchasesOfTangibleFixedAssetsExternalIntraCommunity = "E3_882_003",
+    PurchasesOfTangibleFixedAssetsExternalIntraCommunityE3_882_003 = "E3_882_003",
 
     /**
      * Purchases of tangible fixed assets (external third countries)
      * Αγορές ενσώματων παγίων χρήσης/Εξωτερικού Τρίτες Χώρες
      */
-    PurchasesOfTangibleFixedAssetsExternalThirdCountries = "E3_882_004",
+    PurchasesOfTangibleFixedAssetsExternalThirdCountriesE3_882_004 = "E3_882_004",
 
     /**
      * Purchases of intangible fixed assets (wholesale)
      * Αγορές μη ενσώματων παγίων χρήσης/Χονδρικές
      */
-    PurchasesOfIntangibleFixedAssetsWholesale = "E3_883_001",
+    PurchasesOfIntangibleFixedAssetsWholesaleE3_883_001 = "E3_883_001",
 
     /**
      * Purchases of intangible fixed assets (retail)
      * Αγορές μη ενσώματων παγίων χρήσης/Λιανικές
      */
-    PurchasesOfIntangibleFixedAssetsRetail = "E3_883_002",
+    PurchasesOfIntangibleFixedAssetsRetailE3_883_002 = "E3_883_002",
 
     /**
      * Purchases of intangible fixed assets (external intra-community)
      * Αγορές μη ενσώματων παγίων χρήσης/Εξωτερικού Ενδοκοινοτικές
      */
-    PurchasesOfIntangibleFixedAssetsExternalIntraCommunity = "E3_883_003",
+    PurchasesOfIntangibleFixedAssetsExternalIntraCommunityE3_883_003 = "E3_883_003",
 
     /**
      * Purchases of intangible fixed assets (external third countries)
      * Αγορές μη ενσώματων παγίων χρήσης/Εξωτερικού Τρίτες Χώρες
      */
-    PurchasesOfIntangibleFixedAssetsExternalThirdCountries = "E3_883_004",
+    PurchasesOfIntangibleFixedAssetsExternalThirdCountriesE3_883_004 = "E3_883_004",
 
     /**
      * Purchases & expenses within the country
      * Αγορές & δαπάνες στο εσωτερικό της χώρας
      */
-    PurchasesAndExpensesWithinTheCountry = "VAT_361",
+    PurchasesAndExpensesWithinTheCountryVAT_361 = "VAT_361",
 
     /**
      * Purchases & imports of capital goods (fixed)
      * Αγορές ἃ εισαγωγές επενδ. Αγαθών (πάγια)
      */
-    PurchasesAndImportsOfCapitalGoods = "VAT_362",
+    PurchasesAndImportsOfCapitalGoodsVAT_362 = "VAT_362",
 
     /**
      * Other imports excluding capital goods (fixed)
      * Λοιπές εισαγωγές εκτός επενδ. Αγαθών (πάγια)
      */
-    OtherImportsExcludingCapitalGoods = "VAT_363",
+    OtherImportsExcludingCapitalGoodsVAT_363 = "VAT_363",
 
     /**
      * Intra-community acquisitions of goods
      * Ενδοκοινοτικές αποκτήσεις αγαθών
      */
-    IntraCommunityAcquisitionsOfGoods = "VAT_364",
+    IntraCommunityAcquisitionsOfGoodsVAT_364 = "VAT_364",
 
     /**
      * Intra-community receipt of services Article 14.2.a
      * Ενδοκοινοτικές λήψεις υπηρεσιών ἀρθρ. 14.2.α
      */
-    IntraCommunityReceiptOfServices = "VAT_365",
+    IntraCommunityReceiptOfServicesVAT_365 = "VAT_365",
 
     /**
      * Other recipient transactions
      * Λοιπές πράξεις λήπτη
      */
-    OtherRecipientTransactions = "VAT_366",
+    OtherRecipientTransactionsVAT_366 = "VAT_366",
 
     /**
      * Adjustment of goods
      * Απομείωση εμπορευμάτων
      */
-    AdjustmentOfGoods = "E3_103",
+    AdjustmentOfGoodsE3_103 = "E3_103",
 
     /**
      * Adjustment of raw materials and materials
      * Απομείωση πρώτων υλών και υλικών
      */
-    AdjustmentOfRawMaterialsAndMaterials = "E3_203",
+    AdjustmentOfRawMaterialsAndMaterialsE3_203 = "E3_203",
 
     /**
      * Adjustment of raw materials and materials
      * Απομείωση πρώτων υλών και υλικών
      */
-    AdjustmentOfRawMaterialsAndMaterials2 = "E3_303",
+    AdjustmentOfRawMaterialsAndMaterials2E3_303 = "E3_303",
 
     /**
      * Adjustment of products and work in progress
      * Απομείωση προϊόντων και παραγωγής σε εξέλιξη
      */
-    AdjustmentOfProductsAndWorkInProgress = "E3_208",
+    AdjustmentOfProductsAndWorkInProgressE3_208 = "E3_208",
 
 }
 
