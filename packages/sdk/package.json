@@ -1,6 +1,6 @@
 {
   "name": "@yourdata/sdk",
-  "version": "0.0.1-rc",
+  "version": "0.0.1-rc1",
   "main": "./dist/index.js",
   "type": "commonjs",
   "scripts": {
