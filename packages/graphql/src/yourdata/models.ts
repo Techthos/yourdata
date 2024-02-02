@@ -1,30 +1,29 @@
-import { Field, Float, ID, InputType, ObjectType, registerEnumType } from "@nestjs/graphql";
+import { Field, Float, InputType, ObjectType, registerEnumType } from "@nestjs/graphql";
 import { DocumentRequestArgs, types } from "@yourdata/sdk"
-import { IncomeClassificationEnumType, InvoiceEnumType } from "@yourdata/sdk/dist/types";
 
 registerEnumType(types.MovePurposeEnumType, { name: 'MovePurposeEnumType' })
 
 registerEnumType(types.InvoiceVariationEnumType, { name: "InvoiceVariationEnumType" })
 
-registerEnumType(types.CountryCode, { name: "CountryCode" })
+registerEnumType(types.CountryCode, { name: "CountryCodeEnumType" })
 
-registerEnumType(types.CurrencyCode, { name: "CurrencyCode" })
+registerEnumType(types.CurrencyCode, { name: "CurrencyCodeEnumType", valuesMap: {} })
 
-registerEnumType(types.RecEnumType, { name: "RecType" })
+registerEnumType(types.RecEnumType, { name: "RecEnumType" })
 
-registerEnumType(types.PaymentMethodEnumType, { name: "PaymentMethodType" })
+registerEnumType(types.PaymentMethodEnumType, { name: "PaymentMethodEnumType" })
 
-registerEnumType(types.ExpensesClassificationCategoryEnumType, { name: "ExpensesClassificationCategoryType" })
+registerEnumType(types.ExpensesClassificationCategoryEnumType, { name: "ExpensesClassificationCategoryEnumType" })
 
 registerEnumType(types.ExpensesClassificationEnumType, { name: "ExpensesClassificationEnumType" })
 
-registerEnumType(types.MeasurementUnitEnumType, { name: "MeasurementUnitType" })
+registerEnumType(types.MeasurementUnitEnumType, { name: "MeasurementUnitEnumType" })
 
-registerEnumType(types.StampDutyPercentCategoryEnumType, { name: "StampDutyPercentCategoryType" })
+registerEnumType(types.StampDutyPercentCategoryEnumType, { name: "StampDutyPercentCategoryEnumType" })
 
-registerEnumType(types.VatCategoryEnumType, { name: "VatCategoryType" })
+registerEnumType(types.VatCategoryEnumType, { name: "VatCategoryEnumType" })
 
-registerEnumType(types.VatExemptionCategoryEnumType, { name: "VatExemptionCategoryType" })
+registerEnumType(types.VatExemptionCategoryEnumType, { name: "VatExemptionCategoryEnumType" })
 
 registerEnumType(types.InvoiceDetailEnumType, { name: "InvoiceDetailEnumType" })
 
@@ -35,6 +34,7 @@ registerEnumType(types.EntityEnumType, { name: 'EntityEnumType' })
 registerEnumType(types.SpecialInvoiceCategoryEnumType, { name: 'SpecialInvoiceCategoryEnumType' })
 
 registerEnumType(types.IncomeClassificationEnumType, { name: 'IncomeClassificationEnumType' })
+
 registerEnumType(types.IncomeClassificationCategoryEnumType, { name: 'IncomeClassificationCategoryEnumType' })
 
 registerEnumType(types.FuelCodeEnumType, { name: 'FuelCodeEnumType' })
@@ -154,7 +154,7 @@ export class PartyType implements types.PartyType {
     @Field()
     branch: number;
 
-    @Field(type => types.CountryCode)
+    @Field(type => types.CountryCode, {middleware: []})
     country: types.CountryCode;
 
     @Field({ nullable: true })

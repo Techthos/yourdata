@@ -54,7 +54,6 @@ export class YourDataResolver {
 
         if (input.paymentMethod) builder.setPaymentMethod(input.paymentMethod)
 
-
         if (input.invoiceDetails.length) {
             input.invoiceDetails.map(item => builder.addItem({
                 ...item,

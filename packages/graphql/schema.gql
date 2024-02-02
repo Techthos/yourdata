@@ -5,7 +5,7 @@
 type InvoiceHeaderType {
   aa: String!
   correlatedInvoices: String
-  currency: CurrencyCode
+  currency: CurrencyCodeEnumType
   dispatchDate: DateTime
   dispatchTime: DateTime
   exchangeRate: Float
@@ -22,7 +22,7 @@ type InvoiceHeaderType {
   vehicleNumber: String
 }
 
-enum CurrencyCode {
+enum CurrencyCodeEnumType {
   USD
   CAD
   EUR
@@ -241,7 +241,7 @@ type ExpensesClassificationType {
   id: Float
   amount: Float!
   classificationType: ExpensesClassificationEnumType
-  classificationCategory: ExpensesClassificationCategoryType
+  classificationCategory: ExpensesClassificationCategoryEnumType
 }
 
 enum ExpensesClassificationEnumType {
@@ -311,7 +311,7 @@ enum ExpensesClassificationEnumType {
   AdjustmentOfProductsAndWorkInProgressE3_208
 }
 
-enum ExpensesClassificationCategoryType {
+enum ExpensesClassificationCategoryEnumType {
   PurchasesOfGoodsCategory2_1
   PurchasesOfPrimarySecondaryMaterialsCategory2_2
   ReceiptOfServicesCategory2_3
@@ -398,7 +398,7 @@ type AddressType {
 type PartyType {
   address: AddressType
   branch: Float!
-  country: CountryCode!
+  country: CountryCodeEnumType!
   countryDocumentId: String
   documentIdNo: String
   name: String
@@ -406,7 +406,7 @@ type PartyType {
   vatNumber: String!
 }
 
-enum CountryCode {
+enum CountryCodeEnumType {
   Afghanistan
   AlandIslands
   Albania
@@ -678,18 +678,18 @@ type InvoiceRowType {
   itemDescr: String
   lineComments: String
   lineNumber: Float
-  measurementUnit: MeasurementUnitType
+  measurementUnit: MeasurementUnitEnumType
   netValue: Float!
   otherTaxesAmount: Float
   otherTaxesPercentCategory: Float
   quantity15: Float
   quantity: Float
-  recType: RecType
+  recType: RecEnumType
   stampDutyAmount: String
-  stampDutyPercentCategory: StampDutyPercentCategoryType
+  stampDutyPercentCategory: StampDutyPercentCategoryEnumType
   vatAmount: Float!
-  vatCategory: VatCategoryType!
-  vatExemptionCategory: VatExemptionCategoryType
+  vatCategory: VatCategoryEnumType!
+  vatExemptionCategory: VatExemptionCategoryEnumType
   withheldAmount: Float
   withheldPercentCategory: String
 }
@@ -731,13 +731,13 @@ enum InvoiceDetailEnumType {
   FeeFromThirdPartySales
 }
 
-enum MeasurementUnitType {
+enum MeasurementUnitEnumType {
   Pieces
   Kilograms
   Liters
 }
 
-enum RecType {
+enum RecEnumType {
   SpecialLineOfWithholdingTaxes
   FeeLineWithVAT
   OtherTaxesLineWithVAT
@@ -747,14 +747,14 @@ enum RecType {
   NegativeValueSign
 }
 
-enum StampDutyPercentCategoryType {
+enum StampDutyPercentCategoryEnumType {
   Coefficient_1_2_Percent
   Coefficient_2_4_Percent
   Coefficient_3_6_Percent
   OtherStampDutyCases
 }
 
-enum VatCategoryType {
+enum VatCategoryEnumType {
   Vat24Percent
   Vat13Percent
   Vat6Percent
@@ -766,7 +766,7 @@ enum VatCategoryType {
   Vat396Percent
 }
 
-enum VatExemptionCategoryType {
+enum VatExemptionCategoryEnumType {
   WithoutvatArticle2and3
   WithoutvatArticle5
   WithoutvatArticle13
@@ -803,10 +803,10 @@ enum VatExemptionCategoryType {
 type PaymentMethod {
   amount: Float!
   paymentMethodInfo: String
-  type: PaymentMethodType!
+  type: PaymentMethodEnumType!
 }
 
-enum PaymentMethodType {
+enum PaymentMethodEnumType {
   DomesticBusinessPaymentAccount
   ForeignBusinessPaymentAccount
   Cash
@@ -887,7 +887,7 @@ type ResponseDocType {
 input InvoiceHeaderInput {
   aa: String!
   correlatedInvoices: String
-  currency: CurrencyCode
+  currency: CurrencyCodeEnumType
   dispatchDate: DateTime
   dispatchTime: DateTime
   exchangeRate: Float
@@ -908,7 +908,7 @@ input ExpensesClassificationInput {
   id: Float
   amount: Float!
   classificationType: ExpensesClassificationEnumType
-  classificationCategory: ExpensesClassificationCategoryType
+  classificationCategory: ExpensesClassificationCategoryEnumType
 }
 
 input IncomeClassificationInput {
@@ -928,7 +928,7 @@ input AddressInput {
 input PartyInput {
   address: AddressInput
   branch: Float!
-  country: CountryCode!
+  country: CountryCodeEnumType!
   countryDocumentId: String
   documentIdNo: String
   name: String
@@ -956,18 +956,18 @@ input InvoiceItemInput {
   itemDescr: String
   lineComments: String
   lineNumber: Float
-  measurementUnit: MeasurementUnitType
+  measurementUnit: MeasurementUnitEnumType
   netValue: Float!
   otherTaxesAmount: Float
   otherTaxesPercentCategory: Float
   quantity15: Float
   quantity: Float
-  recType: RecType
+  recType: RecEnumType
   stampDutyAmount: String
-  stampDutyPercentCategory: StampDutyPercentCategoryType
+  stampDutyPercentCategory: StampDutyPercentCategoryEnumType
   vatAmount: Float!
-  vatCategory: VatCategoryType!
-  vatExemptionCategory: VatExemptionCategoryType
+  vatCategory: VatCategoryEnumType!
+  vatExemptionCategory: VatExemptionCategoryEnumType
   withheldAmount: Float
   withheldPercentCategory: String
 }
@@ -975,7 +975,7 @@ input InvoiceItemInput {
 input PaymentMethodInput {
   amount: Float!
   paymentMethodInfo: String
-  type: PaymentMethodType!
+  type: PaymentMethodEnumType!
 }
 
 input InvoiceSummaryInput {

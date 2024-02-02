@@ -5,7 +5,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "start": "nest start",
-    "dev": "nest start --watch",
+    "dev": "GRAPHQL_SCHEMA=1 nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main"
   },
@@ -28,6 +28,7 @@
     "@nestjs/graphql": "^12.0.11",
     "@nestjs/mercurius": "^12.0.11",
     "@nestjs/platform-fastify": "^10.3.0",
+    "@yourdata/graphql": "link:",
     "@yourdata/sdk": "*",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
