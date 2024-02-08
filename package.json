@@ -6,6 +6,7 @@
     "pnpm": "^8.14.1"
   },
   "scripts": {
+    "publish:packages": "pnpm --filter @yourdata/* publish",
     "build": "pnpm --filter @yourdata/* build",
     "dev": "pnpm --filter @yourdata/* --parallel run dev"
   },
