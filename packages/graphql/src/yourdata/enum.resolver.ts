@@ -3,6 +3,8 @@ import {
     CurrencyCode,
     ExpensesClassificationCategoryEnumType,
     ExpensesClassificationEnumType,
+    IncomeClassificationEnumType,
+    IncomeClassificationCategoryEnumType,
     InvoiceDetailEnumType,
     InvoiceEnumType,
     MeasurementUnitEnumType,
@@ -26,4 +28,6 @@ export const enumResolvers = {
     StampDutyPercentCategoryEnumType,
     VatCategoryEnumType,
     VatExemptionCategoryEnumType,
+    IncomeClassificationEnumType,
+    IncomeClassificationCategoryEnumType,
 }
