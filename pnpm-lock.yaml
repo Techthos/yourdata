@@ -6,12 +6,6 @@ settings:
 
 importers:
 
-  .:
-    dependencies:
-      pnpm:
-        specifier: ^8.14.1
-        version: 8.14.1
-
   packages/graphql:
     dependencies:
       '@apollo/server':
@@ -3275,12 +3269,6 @@ packages:
   /pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
-    dev: false
-
-  /pnpm@8.14.1:
-    resolution: {integrity: sha512-hWxOzZfF0/MDVOvDc80y+zcnQpXEidstD2E6HmDwEMrfuxUDbVJfOgbewYl+QhmzxPbTvo8vYvsKNmvuaqp1Mw==}
-    engines: {node: '>=16.14'}
-    hasBin: true
     dev: false
 
   /process-warning@2.3.2:
